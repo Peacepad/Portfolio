@@ -1,0 +1,23 @@
+@import "./utils/variables";
+@import "./components/navigation";
+@import "./components/accueil";
+@import "./utils/button";
+@import "./components/presentation";
+
+@import "./components/realisation";
+@import "./components/contact";
+@import "./components/realisation-intro";
+@import "./components/contact-intro";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-primary;
+
+}
+

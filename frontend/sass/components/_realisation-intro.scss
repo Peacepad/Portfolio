@@ -1,0 +1,30 @@
+.realisation-intro {
+    
+    height: 500px;
+    width: 100%;
+    background: #e1dbd6 url(../../public/images/realisation-intro.jpeg) no-repeat top right fixed;
+}
+
+#realisation-top {
+    position: absolute;
+    left: 80px;
+    transform: translatey(0px);
+    transition: 500ms ease-out;
+    padding-top: 70px;
+    z-index: 1;
+   
+    & h2 {
+      font-weight: 700;
+      
+      color: black;
+      margin: auto;
+      display: block;
+      width: 100%;
+      font-family: "Roboto", sans-serif;
+      font-size: 4em;
+    }
+    @media (max-width: 576px) {
+      top: -80px;
+      
+    }
+  }

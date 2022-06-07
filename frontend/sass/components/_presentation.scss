@@ -1,0 +1,80 @@
+.presentation {
+  position: relative;
+  height: 1004px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 70px;
+  background-color: white;
+  overflow: hidden;
+  & h2 {
+    font-weight: 700;
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+  }
+  & p {
+    position: absolute;
+    
+    padding: 20px;
+    
+    color: white;
+    height: 100%;
+    background-color: $color-primary;
+    width: 100%;
+    position: relative;
+    font-size: 1.5em;
+  }
+}
+
+
+
+
+
+.presentation-one {
+  height: 290px;
+  width:100%;
+  position: relative;
+  & p {
+    left: -20%;
+    padding-left: 400px;
+  }
+}
+
+.presentation-one__img {
+  position: absolute;
+  height: 260px;
+  left: calc(80% - 5px);
+  bottom: 0;
+  & img {
+    height: 100%
+  };
+  
+}
+
+.presentation-two {
+  height: 340px;
+  width:100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  & p {
+    right: -20%;
+    padding-right: 400px;
+  }
+}
+
+.presentation-two__img {
+  position: absolute;
+  height: 260px;
+  left: calc(10% + 89px);
+  bottom: 0;
+  & img {
+    height: 100%
+  };
+}

@@ -1,0 +1,210 @@
+.button {
+  cursor: pointer;
+  padding: 10px;
+  border: solid 1px white;
+}
+
+.accueil-button {
+  width: 200px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  width: 200px;
+  height: 40px;
+  overflow: hidden;
+  &:before {
+    content: "";
+    display: block;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.36s;
+    top: 0;
+    left: 0;
+    transform: translatex(-100%);
+    transition: 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  &:hover::before {
+    transform: translatex(0%);
+  }
+  &:hover .button-text {
+    color: $color-primary;
+  }
+}
+
+.button-text {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  font-size: 1em;
+  width: 100%;
+  text-align: center;
+  font-family: "inter", "sans-serif";
+}
+
+#button-about {
+  width: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 500ms;
+  position: absolute;
+  height: 40px;
+  overflow: hidden;
+  bottom: 20px;
+  &:before {
+    content: "";
+    display: block;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.36s;
+    top: 0;
+    left: 0;
+    transform: translatex(-100%);
+    transition: 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  &:hover::before {
+    transform: translatex(0%);
+  }
+  &:hover {
+    color: white;
+    background-color: transparent;
+  }
+
+  &:hover .button-text {
+    color: $color-primary;
+  }
+  @media (max-width: 768px) {
+    position: relative;
+  }
+}
+
+.presentation-return {
+  width: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 500ms;
+  position: absolute;
+  height: 40px;
+  overflow: hidden;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  background-color: transparent;
+
+  &:before {
+    content: "";
+    display: block;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.36s;
+    top: 0;
+    left: 0;
+    transform: translatex(-100%);
+    transition: 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  &:hover::before {
+    transform: translatex(0%);
+  }
+
+  &:hover .button-text {
+    color: $color-primary;
+  }
+}
+
+#contact-previous,
+#contact-next {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 500ms;
+  width: 150px;
+  height: 40px;
+  overflow: hidden;
+  border: solid 1px $color-primary;
+  border-radius: 6px;
+  background-color: $color-primary;
+  & .button-text {
+    color: white;
+  }
+  &:before {
+    content: "";
+    display: block;
+    background-color: $color-primary;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.36s;
+    top: 0;
+    left: 0;
+    transform: translatex(-100%);
+    transition: 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  &:hover::before {
+    transform: translatex(0%);
+  }
+
+  &:hover .button-text {
+    color: white;
+  }
+}
+
+.disable {
+  background-color: #e6e6e6 !important;
+  border: solid 1px #e6e6e6 !important;
+  &:before {
+    background-color: #e6e6e6 !important;
+  }
+}
+
+#contact-send {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 500ms;
+  width: 150px;
+  height: 40px;
+  overflow: hidden;
+border: 1px solid $color-primary;
+  border-radius: 6px;
+  background-color: white;
+  .button-text {
+    color: $color-primary;
+  }
+  &::before {
+    content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		transition: all 0.25s ease;
+    transition-duration: 0.5s;
+    box-shadow: inset 0 0 0 0px $color-primary;
+    border-radius: 0.5;
+  }
+  &:hover::before {
+    box-shadow: inset 0 0 0 60px $color-primary;
+  }
+  &:hover .button-text {
+    
+      color: white;
+    
+  }
+}

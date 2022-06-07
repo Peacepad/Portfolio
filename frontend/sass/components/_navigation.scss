@@ -1,0 +1,56 @@
+.navigation {
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  z-index: 3;
+  background-color: $color-primary;
+  position: fixed;
+
+  & a {
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+ 
+}
+
+.navigation-list {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.navigation-item {
+  font-size: 1.6em;
+  color: white;
+  margin: 0 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  &:first-child {
+    margin: 0;
+  }
+  @media (max-width:768px) {
+    font-size: 1em;
+    
+  }
+}
+
+
+
+#navigation-accueil {
+  position: relative;
+}
+
+.navigation-separator {
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 200ms 100ms ease-in;
+}
