@@ -11,28 +11,13 @@ let contactInputs = [
 let regex = [/^[a-z '-]+$/i,  /.+\@.+\..+/];
 
 
-function showProgress() {
-    if(nextValue == 0) {
-        progressBar.style.transform = `scaleX(0)`;
 
-    }
-    else if(nextValue == -200) {
-        progressBar.style.transform = `scaleX(0.33)`;
-    }
-    else if(nextValue == -400) {
-        progressBar.style.transform = `scaleX(0.66)`;
-    }
-    else if(nextValue == -600) {
-        progressBar.style.transform = 'scaleX(1)';
-    }
-    
-}
 
 
 
 function next() {
   nextValue = nextValue - 200;
-  showProgress();
+ 
   document.querySelector(
     ".contact-form__one"
   ).style.transform = `translateY(${nextValue}px)`;
@@ -52,7 +37,7 @@ function next() {
 
 function previous() {
   nextValue = nextValue + 200;
-  showProgress();
+  
 
   document.querySelector(
     ".contact-form__one"

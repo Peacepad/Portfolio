@@ -1,14 +1,15 @@
 .presentation {
   position: relative;
-  height: 1004px;
+  height: 1500px;
   width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 70px;
   background-color: white;
   overflow: hidden;
+  font-family: 'Varela', sans-serif;
   & h2 {
     font-weight: 700;
     font-size: 4em;
@@ -17,18 +18,7 @@
     font-family: "Roboto", sans-serif;
     width: 100%;
   }
-  & p {
-    position: absolute;
-    
-    padding: 20px;
-    
-    color: white;
-    height: 100%;
-    background-color: $color-primary;
-    width: 100%;
-    position: relative;
-    font-size: 1.5em;
-  }
+  
 }
 
 
@@ -36,10 +26,19 @@
 
 
 .presentation-one {
-  height: 290px;
+  height: 240px;
   width:100%;
   position: relative;
+  z-index: 1;
   & p {
+ 
+    padding: 20px;
+    color: white;
+    height: 100%;
+    background-color: $color-primary;
+    width: 100%;
+    position: relative;
+    font-size: 1.5em;
     left: -20%;
     padding-left: 400px;
   }
@@ -48,7 +47,7 @@
 .presentation-one__img {
   position: absolute;
   height: 260px;
-  left: calc(80% - 5px);
+  left: calc(80% - 7px);
   bottom: 0;
   & img {
     height: 100%
@@ -57,24 +56,48 @@
 }
 
 .presentation-two {
-  height: 340px;
+ height: 600px;
   width:100%;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  
+
   & p {
-    right: -20%;
-    padding-right: 400px;
+   position: absolute;
+   left: 40%;
+   width: 50%;
+   top:50%;
+   transform: translateY(-50%);
+   &:hover ::after {
+     
+     transform: scaleX(1.25);
+   }
+   & ::after {
+     content: "";
+     position: absolute;
+     height: 2px;
+     width: 25%;
+     background-color: black;
+     bottom: -10px;
+     right: 0;
+     transition: 200ms;
+     transform-origin: right;
+   }
+  }
+  & span {
+    font-size: 2em;
   }
 }
 
-.presentation-two__img {
+.presentation-hello {
+  
   position: absolute;
-  height: 260px;
-  left: calc(10% + 89px);
-  bottom: 0;
-  & img {
-    height: 100%
-  };
+  left: 50px;
+  height: 450px;
+  overflow: hidden;
+ z-index: 0;
+ top: 10%;
+ 
 }

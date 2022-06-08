@@ -1,62 +1,56 @@
-let httpRequest = new XMLHttpRequest();
+async function realisationsMain() {
+  const realisationsList = document.querySelector(".realisations-list");
 
-httpRequest.onreadystatechange = function () {
-  if (httpRequest.readyState === 4) {
-    let realisationContainer = document.querySelector(".realisation-list");
-    realisationContainer.innerHTML = "";
-    if (httpRequest.status === 201) {
-      function showDataFromServer() {
-        const response = JSON.parse(httpRequest.response);
-        for (let l = 0; l < response.length; l++) {
-          // Création d'une carte
-          let projetCard = document.createElement("div");
-          projetCard.setAttribute("class", `projet-card`);
-          projetCard.setAttribute('id', `projet-card__${response[l].Id}`);
-          realisationContainer.appendChild(projetCard);
-
-          // Création de l'image
-          let projectCardImageContainer = document.createElement("div");
-          projectCardImageContainer.setAttribute(
-            "class",
-            "projet-card-image-container"
-          );
-          projetCard.appendChild(projectCardImageContainer);
-          let projectCardImage = document.createElement("img");
-          projectCardImage.setAttribute("src", `${response[l].image}`);
-          projectCardImageContainer.appendChild(projectCardImage);
-          // Titre
-          let projetCardTitle = document.createElement("div");
-          projetCardTitle.setAttribute("class", "projet-card-title");
-          projetCardTitle.innerText = response[l].name;
-          projetCard.appendChild(projetCardTitle);
-          
-          // Description
-          let projetCardDescription = document.createElement("p");
-          projetCardDescription.setAttribute(
-            "class",
-            "projet-card-description"
-          );
-          projetCardDescription.innerText = response[l].description;
-          projetCard.appendChild(projetCardDescription);
-          
-            // Grosse lettre
-          let bigLetter = response[l].name.charAt(0);
-          let projetBigLetter = document.createElement('div');
-            projetBigLetter.setAttribute("class", "projet-card-letter");
-            projetBigLetter.innerText = bigLetter;
-            projetCard.appendChild(projetBigLetter);
-          
-        }
-      }
-
-      showDataFromServer();
-     
-    }
-
+  async function getRealisations() {
+    return fetch("http://localhost:8000/api/projet")
+      .then((res) => {
+        return res.json();
+      })
+      .then((realisations) => {
+        return realisations;
+      })
+      .catch(() => {
+        console.log("erreur");
+      });
   }
-};
 
-httpRequest.open("GET", "http://localhost:8000/api/projet", true);
+  let realisations = await getRealisations();
 
-httpRequest.send();
+  function makeRealisationStyle() {
+    for (let l = 0; l < realisations.length; l++) {
+      // Création d'une div par realisation
+      let realisationDiv = document.createElement("div");
+      realisationDiv.setAttribute("class", "realisation");
+      realisationDiv.setAttribute("id", `realisation__${l + 1}`);
+      realisationsList.appendChild(realisationDiv);
 
+      //Création de l'image
+      realisationDiv.style.backgroundImage = `url(${realisations[l].image})`;
+    }
+  }
+  makeRealisationStyle();
+
+
+  
+
+  // Ajout du titre, description au survol de l'élément
+  async function realisationHover() {
+    let realisationsDOM = document.querySelectorAll(".realisation");
+
+    for (let i = 0; i < realisationsDOM.length; i++) {
+      realisationsDOM[i].addEventListener("mouseover", () => {
+        document.querySelector(
+          "#realisation-name"
+        ).innerText = `${realisations[i].name}`;
+        document.querySelector(
+          "#realisation-description"
+        ).innerText = `${realisations[i].description}`;
+        document.querySelector('#realisation-letter').innerText = `${realisations[i].name.charAt(0)}`;
+      });
+    }
+  }
+
+  realisationHover(realisations);
+}
+
+realisationsMain();

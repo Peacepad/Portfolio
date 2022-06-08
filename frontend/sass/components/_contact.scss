@@ -14,218 +14,38 @@
 
 
 
-.contact-form-container {
+
+
+
+
+
+
+.contact-detail {
+  position:absolute;
   width: 45%;
-  position: relative;
+  height: 300px;
+  background-color: #e6e6e6;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-#contact-form {
-  color: black;
-  z-index: 2;
-
-  position: relative;
-  margin: auto;
-  padding-bottom: 5px;
-  overflow: hidden;
-  background: white; 
-margin-top: 50px;
-  & label {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.8em;
-    font-weight: 700;
-    margin: auto;
-    white-space: nowrap;
-    align-items: center;
-    padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
+  top: 50%;
+  right: 0;
+  justify-content: space-between;
   & p {
-    z-index: 1;
-  }
-  }
-  & input {
-    margin-top: 10px;
-    border: none;
-    outline: none;
-    appearance: none;
-    background-color: transparent;
-    padding-bottom: 8px;
-    border-bottom: 1px $color-primary solid;
-    color: $color-primary;
-    font-size: 1em;
-    transition: 100ms;
+    margin-left: 20px;
     text-align: center;
-    z-index: 1;
-    &:focus {
-      border-bottom: 2px $color-primary solid;
-      padding-bottom: 7px;
-    }
-  }
-  & input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    color: $color-primary;
-    transition: background-color 5000s ease-in-out 0s,
-      color 5000s ease-in-out 0s;
-  }
-  & textarea {
-    font-family: "Roboto", sans-serif;
-    margin-top: 10px;
-    border: none;
-    outline: none;
-    appearance: none;
-    background-color: transparent;
-    padding-bottom: 8px;
-    border-bottom: 1px $color-primary solid;
-    color: $color-primary;
-    font-size: 0.8em;
-    transition: 100ms;
-    height: 100px;
-    resize: none;
-    z-index: 1;
-    width: 90%;
-    &:focus {
-      border-bottom: 2px $color-primary solid;
-      padding-bottom: 7px;
-    }
+    font-size: 1.5em;
+    width: 75%;
   }
 }
-
-
-
-
-.contact-button {
-  width: 100%;
-  margin: auto;
-  
-  display: flex;
-  justify-content: center;
-  & button {
-    background-color: white;
-  }
-}
-
-.label-container {
-  height: 200px;
-  overflow: hidden;
-  transition: 200ms ease-out;
- 
-}
-
-.contact-form__one,
-.contact-form__two,
-.contact-form__three,
-.contact-form__four, .contact-form__five {
-  transition: 200ms ease-out;
- 
-}
-
-
-
-.subject-user {
-  display: inline-block;
-}
-
-.error-input {
-  border-bottom: 1px red solid !important;
-
-  &:focus {
-    border-bottom: 2px red solid !important;
-    padding-bottom: 7px;
-  }
-}
-
-#contact-next,
-#contact-submit {
-  margin-left: 2px;
-}
-
-.contact-progress {
-  width: 80%;
-  height: 4px;
-  background-color: #e6e6e6;
-  position: relative;
-  margin: auto;
-  margin-bottom: 60px;
-  border-radius: 1px;
-}
-
-.contact-progress-bar {
-  height: 100%;
-  width: 100%;
-  background-color: $color-primary;
-  border-radius: 1px;
-  transition: 200ms ease-out;
-  overflow: hidden;
-  transform-origin: left;
-  transform: scaleX(0);
-}
-
 
 .contact-photo {
-  position: absolute;
-    width: 400px;
+    height: 260px;
+    width: 200px;
     overflow: hidden;
     right: 50px;
     top: 50px;
-    height: 400px;
+    
 
 }
 
-.contact-number {
-  background-color: white;
-  opacity: 0.7;
-  position: absolute;
-  right: 40px;
-  top: 120px;
-  font-size: 3em;
-  border-radius: 17px;
-  padding: 5px;
-  transition: 300ms ease-in;
-  & span {
-    font-size: 0.7em;
-  }
-}
-
-.contact-mail {
-  background-color: white;
-  opacity: 0.7;
-  position: absolute;
-  right: 70px;
-  top: 420px;
-  font-size: 3em;
-  border-radius: 17px;
-  padding: 5px;
-  white-space: nowrap;
-  transition: 300ms ease-in;
-  & span {
-    font-size: 0.7em;
-  }
-}
-
-.contact-mail:hover, .contact-number:hover {
-opacity: 1;
-}
-
-.contact-detail {
-  position:relative;
-  width: 45%;
-  height: 100%;
-}
-
-#label-send {
-  justify-content: center;
-}
-
-.name-background, .email-background , .subject-background{
-  position: absolute;
-  z-index: 0;
-  & span {
-    color: #e6e6e6;
-    font-size: 200px;
-  }
-}

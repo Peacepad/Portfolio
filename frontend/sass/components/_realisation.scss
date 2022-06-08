@@ -1,62 +1,69 @@
-.realisation {
-  position: relative;
-  background-color: white;
-  width: 100%;
-  transition: 500ms ease-in-out;
-  height: 4200px;
-  @media (max-width: 768px) {
-    margin-top: 200px;
-  }
-}
-
-.realisation-container {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-}
-
-.realisation-list {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  flex-wrap: wrap;
-  overflow: hidden;
-
-  @media (max-width: 1200px) {
-    align-items: flex-start;
-    padding-left: 10%;
-  }
-  @media (max-width: 992px) {
-    padding-left: 2%;
-  }
-  @media (max-width: 768px) {
-    align-items: center;
-    padding-left: 0%;
-  }
-}
-
-.projet-card {
-  margin-top: 100px;
-  background-color: white;
-  color: $color-primary;
+.realisations-list {
   height: 400px;
-  width: 100%;
-  margin-bottom: 100px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.realisation {
+  width: 700px;
+  overflow: hidden;
+  height: 400px;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+  filter: grayscale(80%);
+  &:hover {
+    flex: 5;
+    filter: grayscale(00%);
+    cursor: pointer;
+  }
+}
+
+.realisations-container {
   position: relative;
 }
 
-.projet-card-image-container {
-  width: 700px;
-  height: 500px;
-  overflow: hidden;
-  border: solid 1px $color-primary;
-  & img {
-    transition: 200ms ease-in-out;
-  }
-  &:hover img {
-    transform: translateY(-35%);
-  }
+.realisation-click {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #e6e6e6;
+  font-style: italic;
+}
+
+#realisation-name {
+  margin: auto;
+  font-size: 3em;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+#realisation-description {
+  height: 200px;
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  color: white;
+  font-size: 1.5em;
+  z-index: 1;
+  text-align: center;
+}
+
+#realisation-letter {
+  position: absolute;
+  font-size: 20em;
+  bottom: -24px;
+  left: 50%;
+  color: #e6e6e626;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: 200ms;
 }

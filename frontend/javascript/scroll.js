@@ -85,7 +85,7 @@ class Parallax {
         `${translateY}px`)
       }
       else {
-        let transform = `translateY(${translateY}px)`;
+        let transform = ` translateY(${translateY}px)`;
         if(this.options.r) {
           transform += ` rotate(${diffY * this.options.r}deg)`
         }
@@ -147,7 +147,7 @@ function projetCardAnim() {
   });
 }
 
-setTimeout(projetCardAnim, 1500);
+
 
 
 
