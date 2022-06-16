@@ -1,28 +1,37 @@
 .contact-form-container {
-  width: 50%;
+  width: 40%;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   height: 700px;
   & h3 {
     margin-top: 200px;
     font-size: 3em;
     z-index: 1;
+    margin-right: 30px;
+  }
+  @media (max-width:992px) {
+    width: 100%;
   }
 }
 
 #contact-form {
-  width: 100%;
+  width: 80%;
   position: relative;
   height: 200px;
-  
-  overflow: hidden;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 2em;
   z-index: 1;
+  @media (max-width:992px) {
+    position: relative;
+    top:0;
+    left:0;
+    width: 100%;
+    font-size: 1.5em;
+  }
 }
 
 .contact-background {
@@ -32,14 +41,20 @@
   top: 100px;
   left: -100px;
   overflow: hidden;
+  @media (max-width:992px) {
+    width: 100%;
+    height: 640px;
+    left: 0;
+  }
 }
 
 .label-container {
   position: absolute;
-  left: 300px;
+  overflow: hidden;
   height: 200px;
-  width: 700px;
-
+  width: 100%;
+  right: 0;
+  margin-right: 30px;
   & input {
     border: none;
     background-color: transparent;
@@ -59,6 +74,7 @@
     font-size: 1em;
     outline: none;
   }
+  
 }
 
 .contact-form__one, .contact-form__two, .contact-form__three, .contact-form__four {
@@ -72,35 +88,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  right: 0;
 }
 .contact-form__two {
   position: absolute;
   top: 200px;
+  right: 0;
 }
 .contact-form__three {
   position: absolute;
   top: 400px;
+  right: 0;
+  width: 90%;
 }
 .contact-form__four {
   position: absolute;
   top: 600px;
   width: 348px;
+  right: 0;
   display: flex;
   justify-content: center;
 }
-
-.form-illustration {
+.contact-form__five {
+  top:800px;
   position: absolute;
-  z-index: 0;
-  left: -250px;
-  & span {
-    color: #e6e6e6;
-    font-size: 200px;
-  }
+  transition: 200ms ease-out;
 }
 
+
 .contact-button {
-  position: relative;
-  height: 50%;
-  width: 30%;
+  position: absolute;
+  right: 0;
+  height: 70%;
+  width: 30px;
 }

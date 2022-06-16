@@ -13,6 +13,9 @@
   width: 200px;
   height: 40px;
   overflow: hidden;
+  box-shadow: 0 0 0 0 white;
+  opacity: 0;
+  animation: appear 2s 4.2s ease-out forwards;
   &:before {
     content: "";
     display: block;
@@ -33,6 +36,11 @@
     color: $color-primary;
   }
 }
+
+
+
+
+
 
 .button-text {
   z-index: 1;
@@ -47,82 +55,9 @@
   font-family: "inter", "sans-serif";
 }
 
-#button-about {
-  width: 144px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 500ms;
-  position: absolute;
-  height: 40px;
-  overflow: hidden;
-  bottom: 20px;
-  &:before {
-    content: "";
-    display: block;
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: 0.36s;
-    top: 0;
-    left: 0;
-    transform: translatex(-100%);
-    transition: 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  }
-  &:hover::before {
-    transform: translatex(0%);
-  }
-  &:hover {
-    color: white;
-    background-color: transparent;
-  }
 
-  &:hover .button-text {
-    color: $color-primary;
-  }
-  @media (max-width: 768px) {
-    position: relative;
-  }
-}
 
-.presentation-return {
-  width: 144px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 500ms;
-  position: absolute;
-  height: 40px;
-  overflow: hidden;
-  bottom: 20px;
-  right: 20px;
-  color: white;
-  background-color: transparent;
 
-  &:before {
-    content: "";
-    display: block;
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: 0.36s;
-    top: 0;
-    left: 0;
-    transform: translatex(-100%);
-    transition: 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  }
-  &:hover::before {
-    transform: translatex(0%);
-  }
-
-  &:hover .button-text {
-    color: $color-primary;
-  }
-}
 
 #contact-previous,
 #contact-next {
@@ -139,6 +74,7 @@
 #contact-previous {
   top: 0;
   right: 0;
+  transform: translateY(-100%);
 }
 
 .disable {

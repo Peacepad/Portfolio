@@ -11,7 +11,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
- 
+  
 }
 
 .navigation-list {
@@ -21,7 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding-left: 0;
 }
 
 .navigation-item {
@@ -30,8 +30,13 @@
   margin: 0 10px;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
+  padding-left: 0;
   &:first-child {
     margin: 0;
+    margin-right: 10px;
+  }
+  &:last-child{
+    margin-right:0;
   }
   @media (max-width:768px) {
     font-size: 1em;
@@ -53,4 +58,28 @@
   bottom: 0;
   right: 0;
   transition: 200ms 100ms ease-in;
+}
+
+
+// animation pinceau
+
+#navigation-accueil {
+  opacity:0;
+  animation: appear 250ms 250ms forwards;
+}
+
+
+#navigation-presentation {
+  opacity:0;
+  animation: appear 250ms 650ms forwards;
+}
+
+#navigation-realisation {
+  opacity:0;
+  animation: appear 250ms 1050ms forwards;
+}
+
+#navigation-contact {
+  opacity:0;
+  animation: appear 250ms 1.6s forwards;
 }

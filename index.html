@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./public/css/style.css" rel="stylesheet" />
+    <link href="./frontend/public/css/style.css" rel="stylesheet" />
     <!-- Icones -->
     <link
       rel="stylesheet"
@@ -27,23 +27,26 @@
           <a href="#accueil" id="navigation-accueil__link">Accueil</a>
           <div class="navigation-separator"></div>
         </li>
-        <li class="navigation-item">
+        <li class="navigation-item" id="navigation-presentation">
           <a href="#presentation" id="navigation-about__link">A propos</a>
         </li>
-        <li class="navigation-item">
+        <li class="navigation-item" id="navigation-realisation">
           <a href="#realisation-top" id="navigation-realisation__link"
             >Réalisations</a
           >
         </li>
-        <li class="navigation-item">
+        <li class="navigation-item" id="navigation-contact">
           <a href="#contact" id="navigation-contact__link">Contact</a>
         </li>
       </ul>
     </nav>
     <main id="accueil">
+      <div id="animation-start">
+        <img src="./frontend/public/images/pinceau.png" alt="pinceau" />
+      </div>
       <div class="accueil-info">
         <div class="accueil-photo">
-          <img src="./public/images/PA.png" alt="Photo du développeur" />
+          <img src="./frontend/public/images/PA.png" alt="Photo du développeur" />
         </div>
         <h1>Pierre-Antoine Delamare</h1>
         <h2>Developpeur web</h2>
@@ -56,36 +59,11 @@
     </main>
 
     <article class="presentation" id="presentation">
-      <h2>Développeur Full Stack</h2>
+      <h2 id="presentation-title">Développeur Full Stack</h2>
 
       <div class="presentation-one">
-        <p data-parrallax='{"y":0.00, "x": 0.3}'>
-          Je fais et ferai le nécessaire pour répondre à vos envies. Je mets mes
-          compétences à votre service, pour créer le site web qui vous
-          correspond, de la création du site à l'optimisation du réferencement,
-          jusqu'à l'entretien de ce dernier. <br />
-          <br />
-
-          Je travaille essentiellement sur les Technologies HTML, CSS,
-          Javascript, Sass et NodeJs.<br /><br />
-
-          J'ai eu l'occasion de travailler avec beaucoups d'autres technologies,
-          alors n'hésitez pas à me faire part de vos projets.
-        </p>
-
-        
-      </div>
-
-      <div class="presentation-two">
-        <div class="presentation-hello" data-parrallax="0.1">
-          <img
-            src="./public/images/hello.jpg"
-            alt="bonjour"
-            data-parrallax="0.2"
-          />
-        </div>
-
-        <p>
+       
+        <p class="presentation-one-text">
           <span class="text-big">Bonjour, je m’appelle Pierre-Antoine.</span>
           <br /><br />
           Je suis développeur web junior. Passionné depuis toujours
@@ -101,15 +79,60 @@
           mes compétences à contribution pour aider dans la création de sites
           web.
         </p>
+        <div
+          class="presentation-one-bottom"
+          
+          
+
+        ></div>
       </div>
+
+      <div class="presentation-two">
+
+        <div class="presentation-two__image">
+          <img
+            src="./frontend/public/images/lamp.png"
+            alt="lampe"
+            id="presentation-lamp"
+          />
+          <img src="./frontend/public/images/lamp-switch.png" alt="interrupteur" id="lamp-switch" />
+        </div>
+        
+
+        <div  class="presentation-two__top">
+        <p  id="presentation-two__text">
+          Je fais et ferai le nécessaire pour répondre à vos envies. Je mets mes
+          compétences à votre service, pour créer le site web qui vous
+          correspond, de la création du site à l'optimisation du réferencement,
+          jusqu'à l'entretien de ce dernier. <br />
+          <br />
+
+          Je travaille essentiellement sur les Technologies HTML, CSS,
+          Javascript, MySQL et NodeJs.<br /><br />
+
+          J'ai eu l'occasion de travailler avec beaucoups d'autres technologies,
+          alors n'hésitez pas à me faire part de vos projets.
+
+        </p>
+      </div>
+      <div class="presentation-two__bottom">
+        <div id="presentation-language"></div>
+        <div id="luigi-world">
+      <img src="./frontend/public/images/luigi-box.png" alt="caisse de luigi" id="luigi-box" />
+      <img src="./frontend/public/images/luigi.png" alt="luigi" id="luigi" />
+      <img src="./frontend/public/images/luigiw1.png" alt="luigi-walk" id="luigiw1" />
+      <img src="./frontend/public/images/luigiw2.png" alt="luigi-walk" id="luigiw2" />
+      <img src="./frontend/public/images/luigiw3.png" alt="luigi-walk" id="luigiw3" />
+      <img src="./frontend/public/images/luigijump.png" alt="luigi jump" id="luigij" />
+    </div>
+    </div>
+    </div>
     </article>
 
     <div class="realisation-intro">
       <div id="realisation-top" data-parrallax="0.02">
         <h2 id="realisation-title">Réalisations</h2>
-        <p>
-          Cette partie est encore en construction.
-        </p>
+        <p>Cette partie est encore en construction.</p>
       </div>
     </div>
 
@@ -145,7 +168,6 @@
           <div class="label-container">
             <div class="contact-form__one">
               <label for="name" id="label-name">
-                
                 <p>1 - Quel est votre nom ? *</p>
 
                 <input id="contact-name" name="name" />
@@ -154,7 +176,6 @@
 
             <div class="contact-form__two">
               <label for="email" id="label-email">
-                
                 <p>2 - Quel est votre email ? *</p>
                 <input id="contact-email" name="email" />
               </label>
@@ -162,7 +183,6 @@
 
             <div class="contact-form__three">
               <label for="subject" id="label-subject">
-                
                 <p>3 - Quel est le sujet de votre contact ? *</p>
                 <textarea id="contact-subject" name="subject"></textarea>
               </label>
@@ -175,40 +195,50 @@
                 </button>
               </label>
             </div>
-            
+
+            <div class="contact-form__five">
+              Merci ! Je vous recontacterai prochainement.
+            </div>
           </div>
 
           <div class="contact-button">
-            <button class=" disable" id="contact-previous">
+            <button class="disable" id="contact-previous">
               <span class="material-symbols-outlined"> arrow_upward </span>
             </button>
-            <button  id="contact-next">
+            <button id="contact-next">
               <span class="material-symbols-outlined"> arrow_downward </span>
             </button>
           </div>
         </form>
         <div class="contact-background">
-          <img
-            src="./public/images/contact-formulaire.jpg"
-            alt="formulaire"
-          />
+          <img src="./frontend/public/images/contact-formulaire.jpg" alt="formulaire" />
         </div>
       </div>
 
       <div class="contact-detail">
         <div class="contact-photo">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45199.891267575935!2d4.88136562104132!3d44.92347372229353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f55799c63221c7%3A0x408ab2ae4bfb580!2s26000%20Valence!5e0!3m2!1sfr!2sfr!4v1654697188209!5m2!1sfr!2sfr" width="200" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45199.891267575935!2d4.88136562104132!3d44.92347372229353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f55799c63221c7%3A0x408ab2ae4bfb580!2s26000%20Valence!5e0!3m2!1sfr!2sfr!4v1654697188209!5m2!1sfr!2sfr"
+            width="200"
+            height="260"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
         <p>
-          Vous pouvez également me contacter au 06 74 60 18 08 ou par mail à l'adresse padelamare@gmail.com
+          Vous pouvez également me contacter au <br />
+          06 74 60 18 08 ou par mail à l'adresse <br />padelamare@gmail.com
         </p>
       </div>
     </article>
 
-    <script src="./javascript/realisation.js"></script>
-    <script src="./javascript/presentation.js"></script>
-    <script src="./javascript/navigation.js"></script>
-    <script src="./javascript/contact.js"></script>
-    <script src="./javascript/scroll.js" defer></script>
+    <script src="./frontend/javascript/realisation.js"></script>
+    <script src="./frontend/javascript/presentation.js"></script>
+    <script src="./frontend/javascript/navigation.js"></script>
+    <script src="./frontend/javascript/contact.js"></script>
+    <script src="./frontend/javascript/luigi.js"></script>
+    <script src="./frontend/javascript/scroll.js" defer></script>
   </body>
 </html>

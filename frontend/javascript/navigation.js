@@ -38,7 +38,7 @@ function underlineNavigation() {
       entries.forEach(function (entry) {
         if (entry.intersectionRatio >= ratio) {
           let translateX =
-            document.querySelector("#navigation-about__link").offsetWidth + 10;
+            document.querySelector("#navigation-about__link").offsetWidth + 20;
 
           document.querySelector(
             ".navigation-separator"
@@ -68,7 +68,7 @@ function underlineNavigation() {
             document.querySelector("#navigation-about__link").offsetWidth +
             document.querySelector("#navigation-realisation__link")
               .offsetWidth +
-            30;
+            40;
           document.querySelector(
             ".navigation-separator"
           ).style.transform = `translatex(${translateX}px)`;
@@ -99,7 +99,7 @@ function underlineNavigation() {
             .offsetWidth +
             document.querySelector("#navigation-contact__link")
               .offsetWidth +
-            50;
+            60;
           document.querySelector(
             ".navigation-separator"
           ).style.transform = `translatex(${translateX}px)`;

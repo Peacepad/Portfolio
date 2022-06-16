@@ -2,6 +2,11 @@
     height: 400px;
     width: 100%;
     background: #e1dbd6 url(../../public/images/realisation-intro.jpeg) no-repeat top right fixed;
+    background-size: contain;
+    @media (max-width:992px) {
+      background: #e1dbd6 url(../../public/images/realisation-intro.jpeg) no-repeat bottom right fixed;
+      background-size: contain;
+    }
 }
 
 #realisation-top {
@@ -22,8 +27,7 @@
       font-family: "Roboto", sans-serif;
       font-size: 4em;
     }
-    @media (max-width: 576px) {
-      top: -80px;
-      
+    @media (max-width:992px) {
+      left: 5px;
     }
   }
