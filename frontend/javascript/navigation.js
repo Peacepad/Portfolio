@@ -1,5 +1,3 @@
-
-
 function underlineNavigation() {
   // Accueil
   function underlineHome() {
@@ -95,10 +93,10 @@ function underlineNavigation() {
       entries.forEach(function (entry) {
         if (entry.intersectionRatio >= ratio) {
           let translateX =
-            document.querySelector("#navigation-about__link").offsetWidth + document.querySelector("#navigation-realisation__link")
-            .offsetWidth +
-            document.querySelector("#navigation-contact__link")
+            document.querySelector("#navigation-about__link").offsetWidth +
+            document.querySelector("#navigation-realisation__link")
               .offsetWidth +
+            document.querySelector("#navigation-contact__link").offsetWidth +
             60;
           document.querySelector(
             ".navigation-separator"
@@ -115,3 +113,25 @@ function underlineNavigation() {
 }
 
 underlineNavigation();
+
+// Adapter le menu sur mobile afin qu'il disparaisse au scroll vers le bas et apparaisse scroll vers le haut
+function navigationOnScroll() {
+  let lastScrollTop = 0;
+  // false if direction is down and true if up
+  window.addEventListener("scroll", () => {
+    let st = window.pageYOffset;
+    if (st > lastScrollTop) {
+      
+        document.querySelector(".navigation").style.transform =
+          "translateY(-100%)";
+      
+    } else {
+      document.querySelector(".navigation").style.transform = "translateY(00%)";
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  });
+}
+
+if(window.innerWidth < 768) {
+  navigationOnScroll();}
+

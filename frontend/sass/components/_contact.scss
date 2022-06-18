@@ -7,6 +7,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   overflow: hidden;
+ 
+  position: relative;
+  
 }
 
 .contact-detail {
@@ -58,3 +61,24 @@
     }
 }
 
+
+#contact-top {
+  z-index: 0;
+  height: 290px;
+}
+
+#contact-title {
+  z-index: 1;
+  position: absolute;
+  color: black;
+  font-size: 7em;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#contact-bottom {
+  position: relative;
+  left: 0;
+  top:32%;
+  z-index: 2;
+}

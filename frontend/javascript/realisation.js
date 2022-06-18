@@ -30,22 +30,39 @@ async function realisationsMain() {
   }
   makeRealisationStyle();
 
-
-  
-
+  // DOM
+  const realisationsDOM = document.querySelectorAll(".realisation");
+  const realisationName = document.querySelector("#realisation-name");
+  const realisationDescription = document.querySelector(
+    "#realisation-description"
+  );
+  const realisationLetter = document.querySelector(
+    "#realisation-letter"
+  );
   // Ajout du titre, description au survol de l'élément
   async function realisationHover() {
-    let realisationsDOM = document.querySelectorAll(".realisation");
-
     for (let i = 0; i < realisationsDOM.length; i++) {
       realisationsDOM[i].addEventListener("mouseover", () => {
-        document.querySelector(
-          "#realisation-name"
-        ).innerText = `${realisations[i].name}`;
-        document.querySelector(
-          "#realisation-description"
-        ).innerText = `${realisations[i].description}`;
-        document.querySelector('#realisation-letter').innerText = `${realisations[i].name.charAt(0)}`;
+        realisationName.innerText = `${realisations[i].name}`;
+        setTimeout(() => {
+          realisationName.classList.add("show");
+        }, 200);
+
+        realisationDescription.innerText = `${realisations[i].description}`;
+        setTimeout(() => {
+          realisationDescription.classList.add("show");
+        }, 200);
+
+        realisationLetter.innerText = `${realisations[i].name.charAt(0)}`;
+        setTimeout(() => {
+          realisationLetter.classList.add("show-letter");
+        }, 200);
+      });
+
+      realisationsDOM[i].addEventListener("mouseout", () => {
+        realisationName.classList.remove("show");
+        realisationDescription.classList.remove("show");
+        realisationLetter.classList.remove("show-letter");
       });
     }
   }

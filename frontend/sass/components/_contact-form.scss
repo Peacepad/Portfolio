@@ -1,124 +1,126 @@
 .contact-form-container {
-  width: 40%;
-  position: relative;
+  width: 600px;
+  height: 700px;
+  background-color: rgba(29, 107, 252, 0.7);
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  height: 700px;
+  margin-left: 50px;
+  margin-top: 150px;
+  z-index: 2;
+
   & h3 {
-    margin-top: 200px;
-    font-size: 3em;
+    position: absolute;
+    font-size: 2.53em;
     z-index: 1;
-    margin-right: 30px;
+    right: 45px;
+    top: 20px;
+    color: white;
   }
-  @media (max-width:992px) {
+  @media (max-width: 992px) {
     width: 100%;
+  }
+  @media (max-width:768px) {
+    width: 100%;
+    margin-left: 0px;
+    background-color: rgba(29, 107, 252, 0.5);
   }
 }
 
 #contact-form {
-  width: 80%;
-  position: relative;
-  height: 200px;
+  width: 90%;
+  position: absolute;
+  height: 500px;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 2em;
   z-index: 1;
-  @media (max-width:992px) {
-    position: relative;
-    top:0;
-    left:0;
-    width: 100%;
-    font-size: 1.5em;
-  }
-}
+  background-color: rgba(230, 230, 230, 0.8);
+  top: 125px;
+  left: 150px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  & label {
+    display: flex;
+    flex-direction: column;
 
-.contact-background {
-  position: absolute;
-  height: 640px;
-  z-index: 0;
-  top: 100px;
-  left: -100px;
-  overflow: hidden;
-  @media (max-width:992px) {
-    width: 100%;
-    height: 640px;
-    left: 0;
+    & span {
+      color: #6c6b6b;
+      font-size: 0.7em;
+      text-transform: uppercase;
+    }
   }
-}
-
-.label-container {
-  position: absolute;
-  overflow: hidden;
-  height: 200px;
-  width: 100%;
-  right: 0;
-  margin-right: 30px;
+  & input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
   & input {
-    border: none;
-    background-color: transparent;
-    padding-bottom: 5px;
-    border-bottom: black solid 1px;
-    width: 100%;
     outline: none;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: solid 1px #6c6b6b;
+    background-color: transparent;
     font-size: 1em;
+    /* Change the white to any color */
+    
+    &:focus {
+      padding-bottom: 9px;
+      border-bottom: solid 2px #6c6b6b;
+    }
   }
   & textarea {
-    border: none;
-    background-color: transparent;
-    padding-bottom: 15px;
-    border-bottom: black solid 1px;
-    width: 100%;
-    resize: none;
-    font-size: 1em;
     outline: none;
+    resize: none;
+    border: none;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #6c6b6b;
+    background-color: transparent;
+    font-size: 1em;
+    &:focus {
+      padding-bottom: 9px;
+      border-bottom: solid 2px #6c6b6b;
+    }
   }
-  
+  @media (max-width:768px) {
+   left: 50%;
+   transform: translateX(-50%);
+  }
 }
 
-.contact-form__one, .contact-form__two, .contact-form__three, .contact-form__four {
-    transition: 200ms ease-out;
+#label-firstname {
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 49%;
 }
 
-.contact-form__one {
-  position: absolute;
-  height: 100%;
-  position: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  right: 0;
-}
-.contact-form__two {
-  position: absolute;
-  top: 200px;
-  right: 0;
-}
-.contact-form__three {
-  position: absolute;
-  top: 400px;
-  right: 0;
-  width: 90%;
-}
-.contact-form__four {
-  position: absolute;
-  top: 600px;
-  width: 348px;
-  right: 0;
-  display: flex;
-  justify-content: center;
-}
-.contact-form__five {
-  top:800px;
-  position: absolute;
-  transition: 200ms ease-out;
+#label-lastname {
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 49%;
 }
 
+#label-email {
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+}
 
-.contact-button {
+#label-message {
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+#contact-buttons {
   position: absolute;
-  right: 0;
-  height: 70%;
-  width: 30px;
+  bottom: -50px;
+  left: 200px;
+  width: 100%;
+  height: 40px;
 }

@@ -4,6 +4,7 @@
   position: relative;
   padding-top: 20px;
   min-height: 100vh;
+ 
 }
 
 .accueil-info {
@@ -15,20 +16,20 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 150px;
-
+  
   & h1 {
     margin-top: 20px;
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     animation: appear 250ms 3.6s ease-out forwards;
-    opacity: 0;
+    //opacity: 0;
   }
   & h2 {
     margin-top: 20px;
     font-family: "Tenor Sans", sans-serif;
     text-transform: uppercase;
     animation: appear 250ms 4s ease-out forwards;
-    opacity: 0;
+    //opacity: 0;
   }
 }
 
@@ -37,7 +38,7 @@
   & img {
     border-radius: 50%;
   }
-  opacity: 0;
+  //opacity: 0;
   animation: appear 1s 2.6s forwards;
 }
 
@@ -49,7 +50,7 @@
   left: 50%;
   z-index: 5;
   // x et y
-  transform: translate(40%, 165%) rotate(0deg);
+  
 
   animation: pinceau 10s forwards;
 }
