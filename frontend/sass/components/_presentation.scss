@@ -13,16 +13,16 @@
     font-weight: 700;
     font-size: 4em;
     text-align: center;
-    
     font-family: "Roboto", sans-serif;
     width: 95%;
     color: $color-primary;
     position: relative;
     transform: scale(250);
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     @media (max-width: 657px) {
-      transform: scale(500) translatey(49px);
+      transform: scale(1) translatey(0px);
+      font-size: 3em;
     }
   }
   & span {
@@ -31,7 +31,10 @@
 }
 
 .unzoom {
-  animation: unzoom 1s 250ms forwards;
+  @media (min-width:657px) {
+    animation: unzoom 1s 250ms forwards;
+  }
+  
 }
 
 @keyframes unzoom {
@@ -53,7 +56,7 @@
   }
 }
 
-.presentation-one-bottom {
+.separator {
   width: 50%;
   height: 50px;
   background-image: radial-gradient(
@@ -186,43 +189,7 @@
   z-index: 1;
 }
 
-#luigi-world {
-  width: 50%;
-  height: 100%;
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  @media (max-width: 450px) {
-    width: 100%;
-  }
-}
 
-#luigi-box {
-  position: absolute;
-  left: 50%;
-  bottom: 64px;
-  transform: translateX(-50%);
-  animation: luigi-box-anim 2s infinite;
-}
-
-#luigi {
-  position: absolute;
-  bottom: 16px;
-  left: calc(0% - 16px);
-  animation: luigi-anim 2s infinite;
-  opacity: 1;
-}
-
-#luigiw1,
-#luigiw2,
-#luigiw3,
-#luigij {
-  position: absolute;
-  bottom: 16px;
-  left: calc(0% - 16px);
-  animation: luigi-anim 2s infinite;
-  opacity: 0;
-}
 
 #presentation-language {
   position: absolute;

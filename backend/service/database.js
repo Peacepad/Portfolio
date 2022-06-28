@@ -1,5 +1,5 @@
 require("dotenv").config();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const { promisify } = require("util");
 
 const connection = mysql.createConnection({
@@ -15,9 +15,6 @@ const connection = mysql.createConnection({
 
 connection.query = promisify(connection.query);
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Connecté à la base de données MySQL!")
-})
+
 
 module.exports = connection;

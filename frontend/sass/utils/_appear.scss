@@ -1,0 +1,19 @@
+.appear-scroll {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 700ms;
+}
+
+
+.appear {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+@keyframes start {
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+

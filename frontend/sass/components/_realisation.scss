@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   margin: auto;
- 
+  z-index: 2;
   @media (max-width: 1200px) {
     width: 90%;
   }
@@ -29,7 +29,7 @@
   background-repeat: none;
   transition: flex 0.8s ease;
   opacity: 0.5;
-  
+
   &:hover,
   &:active {
     flex: 5;
@@ -44,6 +44,13 @@
 
 .realisations-container {
   position: relative;
+  & h3 {
+    font-size: 2em;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "Roboto", "sans-serif";
+  }
 }
 
 .realisation-click {
@@ -57,7 +64,7 @@
 
 #realisation-name {
   margin: auto;
-  font-size: 3em;
+  font-size: 2em;
   font-family: "Inter", sans-serif;
   text-align: center;
   text-transform: uppercase;
@@ -73,29 +80,29 @@
   margin-top: 20px;
   width: 50%;
   color: black;
-  font-size: 1.5em;
+  font-size: 1.3em;
   z-index: 1;
   text-align: center;
   position: relative;
   opacity: 0;
-  transform: translateY(-120%);
-  font-family: "raleway";
+  transform: translateY(-50%);
+  font-family: "raleway", "sans-serif";
   @media (max-width: 992px) {
     width: 90%;
     height: 362px;
+    transform: translateY(-10%);
   }
 }
 
 #realisation-letter {
   position: absolute;
-  font-size: 20em;
-  bottom: -24px;
+  font-size: 10em;
+  bottom: 70px;
   left: 50%;
   color: $color-primary;
   opacity: 0;
   transform: translateX(-50%);
   z-index: 0;
-  
 }
 
 .show {
@@ -106,5 +113,54 @@
 
 .show-letter {
   transition: 1s;
-  opacity: .5 !important;
+  opacity: 0.5 !important;
 }
+
+// ---- realisation-now
+.realisation-now {
+  margin-top: 110px;
+  & h3 {
+    font-size: 2em;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "Roboto", "sans-serif";
+  }
+}
+.realisation-now__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.realisation-now__img {
+  margin-bottom: 50px;
+  @media (max-width:768px) {
+    width: 100%;
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+
+
+.realisation-now__information {
+  background-color: rgba(255, 255, 255,.7);
+  width: 600px;
+  z-index: 1;
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  padding: 5px;
+  font-family: "Varela",sans-serif;
+  & strong {
+    font-size: 1.2em;
+  }
+  @media (max-width:768px) {
+    width: 100%;
+    
+  }
+}
+

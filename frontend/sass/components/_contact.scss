@@ -2,13 +2,14 @@
   background-color: white;
   position: relative;
   font-family: "Roboto", sans-serif;
-  padding-bottom: 20px;  
+  
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   overflow: hidden;
  
   position: relative;
+  background-color: $color-primary;
   
 }
 
@@ -75,10 +76,33 @@
   top: 22%;
   left: 50%;
   transform: translateX(-50%);
+  @media (max-width:768px) {
+    font-size: 3em;
+  }
 }
 #contact-bottom {
   position: relative;
   left: 0;
   top:32%;
   z-index: 2;
+}
+
+.contact-info {
+  z-index: 2;
+  position: absolute;
+  width: 320px;
+  right: 100px;
+  bottom: 100px;
+  color:#6c6b6b;
+  background-color: rgba(230, 230, 230, 0.8);
+  padding: 20px;
+  @media (max-width: 992px) {
+    position: relative;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+  }
+  & a {
+    color:#6c6b6b;
+  }
 }

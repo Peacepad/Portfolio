@@ -6,6 +6,9 @@
   background-color: $color-primary;
   position: fixed;
   transition: 500ms;
+  opacity: 0;
+  
+  animation: start 500ms forwards;
   & a {
     color:white;
     text-decoration: none;
@@ -44,7 +47,7 @@
     font-size: 1em;
   }
   @media (max-width:576px) {
-    font-size: .8em;
+    font-size: .9em;
   }
 }
 
@@ -61,29 +64,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
+ 
   transition: 200ms 100ms ease-in;
+  
 }
 
 
-// animation pinceau
-
-// #navigation-accueil {
-//   opacity:0;
-//   animation: appear 250ms 250ms forwards;
-// }
-
-
-// #navigation-presentation {
-//   opacity:0;
-//   animation: appear 250ms 650ms forwards;
-// }
-
-// #navigation-realisation {
-//   opacity:0;
-//   animation: appear 250ms 1050ms forwards;
-// }
-
-// #navigation-contact {
-//   opacity:0;
-//   animation: appear 250ms 1.6s forwards;
-// }

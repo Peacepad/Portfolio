@@ -24,7 +24,7 @@ function underlineNavigation() {
   underlineHome();
 
   function underlinePresentation() {
-    const ratio = 0.5; // 50% de l'élement doit être visible
+    const ratio = 0.4; // 50% de l'élement doit être visible
 
     const options = {
       root: null,
@@ -81,7 +81,7 @@ function underlineNavigation() {
   underlineRealisation();
 
   function underlineContact() {
-    const ratio = 1;
+    const ratio = 0.5;
 
     const options = {
       root: null,
@@ -106,7 +106,7 @@ function underlineNavigation() {
     };
 
     const observer = new IntersectionObserver(handleIntersect, options);
-    observer.observe(document.querySelector("#contact-top"));
+    observer.observe(document.querySelector("#contact"));
   }
 
   underlineContact();

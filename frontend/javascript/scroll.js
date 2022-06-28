@@ -133,3 +133,30 @@ function presentationTitle() {
 }
 
 presentationTitle();
+
+
+function appear() {
+  const ratioA = 0.3; // 30% de l'élement doit être visible
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratioA,
+  };
+
+  const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > ratioA) {
+        entry.target.classList.add("appear");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+  const appearElements = document.querySelectorAll(".appear-scroll");
+  appearElements.forEach(appearElement => observer.observe(appearElement));
+}
+
+appear()
