@@ -7,14 +7,14 @@
   position: fixed;
   transition: 500ms;
   opacity: 0;
-  
+
   animation: start 500ms forwards;
   & a {
-    color:white;
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
   }
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     height: 30px;
   }
 }
@@ -33,25 +33,23 @@
   font-size: 1.6em;
   color: white;
   margin: 0 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   padding-left: 0;
   &:first-child {
     margin: 0;
     margin-right: 10px;
   }
-  &:last-child{
-    margin-right:0;
+  &:last-child {
+    margin-right: 0;
   }
-  @media (max-width:768px) {
-    font-size: 1em;
+  @media (max-width: 768px) {
+    font-size: 0.9em;
   }
-  @media (max-width:576px) {
-    font-size: .9em;
+  @media (max-width: 576px) {
+    font-size: 0.9em;
   }
 }
-
-
 
 #navigation-accueil {
   position: relative;
@@ -64,9 +62,6 @@
   position: absolute;
   bottom: 0;
   right: 0;
- 
+
   transition: 200ms 100ms ease-in;
-  
 }
-
-
