@@ -4,7 +4,7 @@ const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
 const projetRoutes = require("./routes/projet");
-const pagesRoutes = require("./routes/pages");
+
 
 const app = express();
 

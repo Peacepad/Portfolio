@@ -11,7 +11,10 @@ const connection = mysql.createConnection({
 });
 
 
-
+connection.connect(function(err){
+  if(err) console.log(err);
+  console.log("Connected !")
+})
 
 connection.query = promisify(connection.query);
 

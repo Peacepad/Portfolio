@@ -50,16 +50,19 @@ async function realisationsMain() {
           document.querySelector('#realisation-letter').innerText = `${realisations[i].name.charAt(0)}`;
 
           // ajout des effets de style
-          document.querySelector(
-            "#realisation-name"
-          ).classList.add("show");
-          document.querySelector(
-            "#realisation-description"
-          ).classList.add("show");
-          document.querySelector(
-            "#realisation-letter"
-          ).classList.add("show-letter");
-        });
+          setTimeout(() => {
+            document.querySelector(
+                "#realisation-name"
+              ).classList.add("show");
+              document.querySelector(
+                "#realisation-description"
+              ).classList.add("show");
+              document.querySelector(
+                "#realisation-letter"
+              ).classList.add("show-letter");
+            });
+          },100)
+          
 
         realisationsDOM[i].addEventListener("mouseout", () => {
             // ajout des effets de style
