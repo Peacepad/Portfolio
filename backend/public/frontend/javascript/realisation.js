@@ -2,7 +2,7 @@ async function realisationsMain() {
     const realisationsList = document.querySelector(".realisations-list");
   
     async function getRealisations() {
-      return fetch("http://localhost:8000/api/projet")
+      return fetch(`http://localhost:8080/api/projet`)
         .then((res) => {
           return res.json();
         })
