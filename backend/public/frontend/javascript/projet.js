@@ -30,7 +30,7 @@ async function showFetchProjet() {
   projetHeader.setAttribute("class", "projet-header");
   projetHeader.innerText = `${projet[0].name}`;
   projetHeaderContainer.appendChild(projetHeader);
-  
+
   // Projet Context
   let projetContextContainer = document.createElement("div");
   projetContextContainer.setAttribute("class", "projet-context__container");
@@ -52,12 +52,6 @@ async function showFetchProjet() {
   let projetImage = document.createElement("img");
   projetImage.setAttribute("src", `${projet[0].image}`);
   projetImageContainer.appendChild(projetImage);
-
-
-
-  
-
-  
 
   // Projet Description
   let projetDescriptionContainer = document.createElement("div");
@@ -84,10 +78,20 @@ async function showFetchProjet() {
   projetLinkHeader.innerText = "Lien";
   projetLinkContainer.appendChild(projetLinkHeader);
 
-  let projetLink =document.createElement('a');
-  projetLink.setAttribute('href', `${projet[0].link}`);
+  let projetLink = document.createElement("a");
+  projetLink.setAttribute("href", `${projet[0].link}`);
   projetLinkContainer.appendChild(projetLink);
   projetLink.innerHTML = `<img src="/images/github.png" alt="Github" />`;
 }
 
 showFetchProjet();
+
+
+// Page infos
+
+async function pageInfos() {
+    const projet = await fetchProjet();
+    document.title = `Pierre-Antoine - ${projet[0].name}`
+}
+
+pageInfos();
