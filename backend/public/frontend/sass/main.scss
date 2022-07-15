@@ -9,6 +9,7 @@
 @import "./components/realisation-intro";
 @import "./components/contact-intro";
 @import "./utils/appear";
+@import "./components/projet";
 
 * {
   box-sizing: border-box;
@@ -19,6 +20,6 @@
 
 body {
   background-color: $color-primary;
-
+ 
 }
 

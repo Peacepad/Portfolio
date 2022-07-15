@@ -19,6 +19,8 @@ app.use(express.urlencoded());
 
 app.use(express.static('public'));
 
+app.use('/projets', express.static("./public/frontend/projets"));
+app.use('/images', express.static("./public/frontend/public/images"));
 
 
 app.use("/api/projet", projetRoutes);

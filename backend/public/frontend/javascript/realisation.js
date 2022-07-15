@@ -21,13 +21,17 @@ async function realisationsMain() {
         // Création d'une div par realisation
         let realisationDiv = document.createElement("div");
         realisationDiv.setAttribute("class", "realisation");
-        realisationDiv.setAttribute("id", `realisation__${l + 1}`);
+        realisationDiv.setAttribute("id", `realisation__${realisations[l].id}`);
         realisationsList.appendChild(realisationDiv);
   
-        //Création de l'image
+        // Création de l'image
         realisationDiv.style.backgroundImage = `url(${realisations[l].image})`;
-        //
-        
+        // Création du lien
+        let realisationButton = document.createElement('a');
+        realisationButton.setAttribute('class', "realisation-link");
+        realisationButton.setAttribute('href', `projets/projet.html?id=${realisations[l].id}`);
+        realisationButton.innerText = "En voir plus sur le projet";
+        realisationDiv.appendChild(realisationButton);
       }
     }
   
@@ -66,6 +70,9 @@ async function realisationsMain() {
 
         realisationsDOM[i].addEventListener("mouseout", () => {
             // ajout des effets de style
+            setTimeout(() => {
+      
+            
           document.querySelector(
             "#realisation-name"
           ).classList.remove("show");
@@ -76,7 +83,7 @@ async function realisationsMain() {
             "#realisation-letter"
           ).classList.remove("show-letter");
         });
-        
+      },100)
         
       }
     }
