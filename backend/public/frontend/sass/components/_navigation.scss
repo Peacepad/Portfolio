@@ -7,7 +7,6 @@
   position: fixed;
   transition: 500ms;
   opacity: 0;
-
   animation: start 500ms forwards;
   & a {
     color: white;
@@ -27,6 +26,10 @@
   justify-content: center;
   align-items: center;
   padding-left: 0;
+  @media (max-width: 576px) {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
 
 .navigation-item {
@@ -36,6 +39,7 @@
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   padding-left: 0;
+  white-space: nowrap;
   &:first-child {
     margin: 0;
     margin-right: 10px;
@@ -47,7 +51,7 @@
     font-size: 0.9em;
   }
   @media (max-width: 576px) {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 
@@ -71,7 +75,7 @@
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  font-size: 1.6em;
+  
   position: fixed;
   left: 0;
   top:0;
@@ -81,6 +85,10 @@
     color:white;
     text-decoration: none;
     position: relative;
+    font-size: 1.6em !important;
+    @media (max-width: 996px) {
+      font-size: 1.2em !important;
+    }
     &::after {
       content: "";
       height: 2px;
@@ -96,5 +104,5 @@
       transform: scaleX(2);
     }
   }
-
+ 
 }

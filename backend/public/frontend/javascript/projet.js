@@ -5,7 +5,7 @@ const projetContainer = document.querySelector("#projet");
 // recherche des données sur le projet
 
 async function fetchProjet() {
-  return fetch(`http://localhost:8080/api/projet/${projetid}`)
+  return fetch(`https://pa-delamare.fr/api/projet/${projetid}`)
     .then(function (res) {
       return res.json();
     })
