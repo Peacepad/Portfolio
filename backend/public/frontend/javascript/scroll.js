@@ -2,6 +2,8 @@ const accueilDOM = document.querySelector("#accueil"),
   presentationDOM = document.querySelector(".presentation"),
   realisationDOM = document.querySelector(".realisation"),
   filterDOM = document.querySelector("#realisation-filter");
+
+  
 function offsetTop(a, b = 0) {
   return a.offsetParent
     ? offsetTop(a.offsetParent, b + a.offsetTop)

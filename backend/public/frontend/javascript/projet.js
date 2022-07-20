@@ -1,5 +1,6 @@
 let params = new URL(document.location).searchParams;
-let projetid = params.get("id");
+let projetid = parseInt(params.get("id"));
+
 const projetContainer = document.querySelector("#projet");
 
 // recherche des données sur le projet
@@ -24,7 +25,10 @@ async function showFetchProjet() {
   // Projet titre
   let projetHeaderContainer = document.createElement("div");
   projetContainer.appendChild(projetHeaderContainer);
-  projetHeaderContainer.setAttribute("class", "projet-header__container");
+  projetHeaderContainer.setAttribute(
+    "class",
+    "projet-header__container appear"
+  );
 
   let projetHeader = document.createElement("h1");
   projetHeader.setAttribute("class", "projet-header");
@@ -47,10 +51,13 @@ async function showFetchProjet() {
   // Affichage de l'image
   let projetImageContainer = document.createElement("div");
   projetImageContainer.setAttribute("class", "projet-image__container");
+
   projetContainer.appendChild(projetImageContainer);
 
   let projetImage = document.createElement("img");
   projetImage.setAttribute("src", `${projet[0].image}`);
+  projetImage.setAttribute('alt', "Aperçu du projet");
+
   projetImageContainer.appendChild(projetImage);
 
   // Projet Description
@@ -86,12 +93,85 @@ async function showFetchProjet() {
 
 showFetchProjet();
 
-
 // Page infos
 
 async function pageInfos() {
-    const projet = await fetchProjet();
-    document.title = `Pierre-Antoine - ${projet[0].name}`
+  const projet = await fetchProjet();
+  document.title = `Pierre-Antoine - ${projet[0].name}`;
 }
 
 pageInfos();
+
+// Changer de projet
+
+async function getRealisations() {
+  return fetch(`https://pa-delamare.fr/api/projet`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((realisations) => {
+      return realisations;
+    })
+    .catch(() => {
+      console.log("erreur");
+    });
+}
+
+async function nextProjet() {
+  const projet = await getRealisations();
+
+  let projetNumberMax = projet.length;
+  let nextProjetDiv = document.createElement("div");
+  nextProjetDiv.setAttribute("class", "projet-next");
+
+  let nextProjetNumber;
+
+  if (projetid == projetNumberMax) {
+    nextProjetNumber = 1;
+  } else {
+    nextProjetNumber = projetid +1;
+  }
+  nextProjetDiv.innerHTML = `<a href="./projet.html?id=${nextProjetNumber}" alt="Projet suivant"><span class="material-symbols-outlined">
+  arrow_forward_ios
+  </span></a>`;
+  projetContainer.appendChild(nextProjetDiv);
+}
+nextProjet();
+
+async function previousProjet() {
+  const projet = await getRealisations();
+
+  let projetNumberMax = projet.length;
+  let projetNumberMin = 1;
+  let previousProjetDiv = document.createElement("div");
+  previousProjetDiv.setAttribute("class", "projet-previous");
+
+  let previousProjetNumber;
+
+if (projetid == projetNumberMin) {
+  previousProjetNumber = projetNumberMax;
+} else {
+  previousProjetNumber = projetid -1;
+}
+
+
+previousProjetDiv.innerHTML = `<a href="./projet.html?id=${previousProjetNumber}" alt="Projet précédent"><span class="material-symbols-outlined">
+arrow_back_ios
+</span></a>`;
+
+
+
+
+  projetContainer.appendChild(previousProjetDiv);
+}
+
+previousProjet()
+
+
+//
+async function SEO() {
+  const projet = await getRealisations();
+  document.querySelector('meta[name="keywords"]').setAttribute('content', `${projet[0].name}, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`)
+}
+
+SEO()

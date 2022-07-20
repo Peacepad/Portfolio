@@ -83,7 +83,7 @@ async function realisationsMain() {
             "#realisation-letter"
           ).classList.remove("show-letter");
         });
-      },100)
+      },5)
         
       }
     }
