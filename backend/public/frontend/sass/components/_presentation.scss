@@ -138,11 +138,8 @@
     linear-gradient(90deg, rgb(29, 107, 252), rgb(29, 107, 252));
   background-attachment: fixed;
   margin: auto;
+  margin-top: 20px;
   bottom: 0;
-  transform: left;
-  transform: scaley(0);
-  transform-origin: left;
-  transition: 1s 500ms;
   @media (max-width: 992px) {
     width: 90%;
   }
@@ -153,18 +150,17 @@
  
   width: 50%;
   position: relative;
-
-  height: 300px;
-  justify-content: center;
-  align-items: center;
+background-color: #e6e6e6;
+  
+  
   margin-bottom: 40px;
-  & p {
+ 
     z-index: 1;
-    position: absolute;
-    width: 100%;
+  
+
     padding: 10px;
     
-  }
+  
   @media (max-width:1200px) {
    width: 60%;
   }

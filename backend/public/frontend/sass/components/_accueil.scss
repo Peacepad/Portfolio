@@ -37,12 +37,38 @@
 
 .accueil-photo {
   position: relative;
-  & img {
-    border-radius: 50%;
-  }
+  height: 250px;
+  width: 225px;
+  overflow: hidden;  
   opacity: 0;
-  
-  animation: start 4s 200ms forwards;
-  transform: scale(0.9) rotate(3deg);
+  animation: start 500ms forwards;
 }
 
+#photo-pa {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  animation: start 500ms 500ms forwards;
+}
+
+#photo-mask {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+#photo-background {
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 225px;
+  width: 221px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+
+}
