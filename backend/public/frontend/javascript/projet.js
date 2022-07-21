@@ -35,6 +35,10 @@ async function showFetchProjet() {
   projetHeader.innerText = `${projet[0].name}`;
   projetHeaderContainer.appendChild(projetHeader);
 
+  let projetHeaderBackground = document.createElement("div");
+  projetHeaderBackground.setAttribute("class", "projet-header__background");
+  projetHeaderContainer.appendChild(projetHeaderBackground);
+
   // Projet Context
   let projetContextContainer = document.createElement("div");
   projetContextContainer.setAttribute("class", "projet-context__container");
@@ -57,8 +61,11 @@ async function showFetchProjet() {
   let projetImage = document.createElement("img");
   projetImage.setAttribute("src", `${projet[0].image}`);
   projetImage.setAttribute('alt', "Aperçu du projet");
-
   projetImageContainer.appendChild(projetImage);
+
+  let projetImageBackground = document.createElement('div');
+  projetImageBackground.setAttribute("class", "projet-image__background");
+  projetImageContainer.appendChild(projetImageBackground)
 
   // Projet Description
   let projetDescriptionContainer = document.createElement("div");

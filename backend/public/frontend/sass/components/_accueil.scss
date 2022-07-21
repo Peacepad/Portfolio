@@ -1,5 +1,5 @@
 #accueil {
-  background-image: $color-primary;
+  background: $color-primary;
   width: 100%;
   position: relative;
   padding-top: 20px;
@@ -41,7 +41,8 @@
     border-radius: 50%;
   }
   opacity: 0;
-  animation: start 500ms 200ms forwards;
-  transform: translateY(200%);
+  
+  animation: start 4s 200ms forwards;
+  transform: scale(0.9) rotate(3deg);
 }
 

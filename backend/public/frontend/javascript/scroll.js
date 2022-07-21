@@ -88,3 +88,32 @@ function appear() {
   document.querySelectorAll(".appear-scroll").forEach((b) => a.observe(b));
 }
 Parallax.bind(), presentationTitle(), appear();
+
+
+function appearLeft() {
+  let a = new IntersectionObserver(
+    function (a, b) {
+      a.forEach(function (a) {
+        a.intersectionRatio > 0.25 &&
+          (a.target.classList.add("appear-left"), b.unobserve(a.target));
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.25 }
+  );
+  document.querySelectorAll(".separator").forEach((b) => a.observe(b));
+}
+appearLeft();
+
+function appearTop() {
+  let a = new IntersectionObserver(
+    function (a, b) {
+      a.forEach(function (a) {
+        a.intersectionRatio > 0.25 &&
+          (a.target.classList.add("appear-top"), b.unobserve(a.target));
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.25 }
+  );
+  document.querySelectorAll(".presentation-one-text__background").forEach((b) => a.observe(b));
+}
+appearTop();

@@ -12,6 +12,10 @@
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+    transition: 100ms;
+  }
+  & a:hover {
+    color: #e6e6e6;
   }
   @media (max-width: 768px) {
     height: 30px;
@@ -40,6 +44,7 @@
   font-weight: 600;
   padding-left: 0;
   white-space: nowrap;
+ 
   &:first-child {
     margin: 0;
     margin-right: 10px;
@@ -53,6 +58,7 @@
   @media (max-width: 576px) {
     font-size: 0.8em;
   }
+  
 }
 
 #navigation-accueil {

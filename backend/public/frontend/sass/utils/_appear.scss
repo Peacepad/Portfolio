@@ -17,3 +17,14 @@
     }
 }
 
+.appear-left {
+    
+    transform: scaleX(1) ;
+}
+
+@keyframes image-load {
+    to {
+        transform: translateX(100%);
+    }
+}
+
