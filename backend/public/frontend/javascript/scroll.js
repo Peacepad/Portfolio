@@ -159,7 +159,7 @@ function introAppear() {
   const handleIntersect = function (entries, observer) {
     entries.forEach(function (entry) {
       if (entry.intersectionRatio > ratioA) {
-        if(!window.matchMedia("(max-width:992px)").matches) {
+        if(window.screen.width > 992) {
 
           setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/realisation-intro.webp) no-repeat bottom right fixed`},500)
 
