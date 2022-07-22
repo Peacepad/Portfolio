@@ -34,7 +34,7 @@ function underlineNavigation() {
       let a = new IntersectionObserver(
         function (a, b) {
           a.forEach(function (a) {
-            if (a.intersectionRatio >= 0.3) {
+            if (a.intersectionRatio >= 0.2) {
               let b =
                 document.querySelector("#navigation-about__link").offsetWidth +
                 document.querySelector("#navigation-realisation__link")

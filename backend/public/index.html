@@ -17,13 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Raleway:ital,wght@0,400;1,600&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400;800&family=Raleway:wght@400;600&family=Roboto:wght@400;700&family=Varela&display=swap" rel="stylesheet">
+    
     <!-- SEO -->
     <meta
       name="keywords"
@@ -55,7 +52,7 @@
           <a href="#presentation" id="navigation-about__link">A propos</a>
         </li>
         <li class="navigation-item" id="navigation-realisation">
-          <a href="#realisation-top" id="navigation-realisation__link"
+          <a href="#realisation-intro" id="navigation-realisation__link"
             >Réalisations</a
           >
         </li>
@@ -89,12 +86,15 @@
     </main>
 
     <article class="presentation" id="presentation">
-      <h2 id="presentation-title">Développeur Full Stack</h2>
 
-      <div class="presentation-one">
+      <div class="presentation-container appear-container">
+      <div id="presentation-background" data-parrallax="0.2"></div>
+      <h2 id="presentation-title" class="appear-title">A propos.</h2>
+
+      <div class="presentation-one ">
       
-          <p class="presentation-one-text" data-parrallax="0.09">
-            <span class="text-big">Bonjour, je m’appelle Pierre-Antoine.</span>
+          <p class="presentation-one-text appear-text">
+            Bonjour, 
             <br /><br />
             Je suis développeur web junior. Passionné depuis toujours
             d’informatique j’ai suivi une formation dans le but de réaliser ce
@@ -111,49 +111,19 @@
           </p>
           
        
-        <div class="separator"></div>
+        
 
-        <div class="presentation-animation">
-          <div class="animation-background">
-            <div id="background-one">
-              <img
-                src="./frontend/public/images/background-animation.webp"
-                alt="arrière plan"
-              />
-            </div>
-            <div id="background-two">
-              <img
-                src="./frontend/public/images/background-animation.webp"
-                alt="arrière plan"
-              />
-              <div id="detail">
-                <div id="eye-one"></div>
-                <div id="eye-two"></div>
-                <ul>
-                  <li>Pierre-Antoine</li>
-                  <li>29 ans</li>
-                  <li>Valence</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div id="buddy">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player
-              src="https://assets1.lottiefiles.com/private_files/lf30_nln9kxzl.json"
-              background="transparent"
-              speed="1"
-              style="width: 100px; height: 100px"
-              loop
-              autoplay
-            ></lottie-player>
-          </div>
-        </div>
+      
+      </div>
+
+      <div class="presentation-photo appear-photo">
+        <img src="images/presentation-photo.jpg" alt="photo d'un développeur" />
+        <div class="photo__background"></div>
       </div>
 
       <div class="presentation-two">
-        <div class="presentation-two__top">
-          <p id="presentation-two__text" class="appear-scroll">
+        
+          <p id="presentation-two__text" class="appear-text">
             Je fais et ferai le nécessaire pour répondre à vos envies. Je mets
             mes compétences à votre service, pour créer le site web qui vous
             correspond, de la création du site à l'optimisation du
@@ -166,43 +136,45 @@
             J'ai eu l'occasion de travailler avec beaucoup d'autres
             technologies, alors n'hésitez pas à me faire part de vos projets.
           </p>
-        </div>
+        
       </div>
+
+    </div>
     </article>
 
-    <div class="realisation-intro">
-      <div id="realisation-top" data-parrallax="0.02">
-        <h2 id="realisation-title">Réalisations</h2>
+    <div class="realisation-intro" id="realisation-intro">
+      <div class="photo__background"></div>
+      <div id="realisation-top">
+        <h2 id="realisation-title" class="appear-title">Réalisations</h2>
+       
       </div>
+      
     </div>
 
     <article class="realisations" id="realisations">
       <div class="realisations-container">
-        <h3 class="appear-scroll">Projets réalisés</h3>
+        <h3 class="realisation-h3 appear-scroll">Projets réalisés</h3>
         <div class="realisations-list">
           <!-- Contient les projets -->
         </div>
 
-        <div class="realisation-click">
-          Sélectionnez un projet pour obtenir plus d'informations
-        </div>
-        <div id="realisation-letter"></div>
-        <div id="realisation-name"></div>
-        <div id="realisation-description"></div>
+        
+      <div class="separator">
+        
       </div>
-      <div class="separator"></div>
       <div class="realisation-now">
-        <h3 class="appear-scroll">Projet du moment</h3>
-        <div class="realisation-now__container">
-          <div class="realisation-now__img appear-scroll">
+        <h3  class="realisation-h3 appear-scroll">Projet du moment</h3>
+        <div class="realisation">
+          <div class="realisation-image appear-photo">
             <img
               src="./frontend/public/images/hypnose.webp"
               alt="projet en cours"
             />
+            <div class="photo__background"></div>
           </div>
-
-          <div class="realisation-now__information appear-scroll">
-            <strong>Boutique en ligne de textes hypnotiques.</strong><br />
+          <div class="realisation-title">Boutique en ligne de textes hypnotiques.</div>
+          <div class="realisation-description appear-scroll">
+            
             Site de commerce en ligne. Une partie administrateur est créé afin
             de gérer les produits en vente sur le site. Les requêtes MySQL
             permettent le tri des articles et la recherche en direct.

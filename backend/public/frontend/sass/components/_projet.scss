@@ -1,178 +1,178 @@
 #projet {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(
-        #e6e6e6 50%,
-        white 50%
-    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#e6e6e6 50%, white 50%);
 
-    width: 100%;
-    margin-top: 80px;
-    min-height: 100vh;
-    position: relative;
-   overflow: hidden;
-   transform: translateY(-100%);
-   animation: start 500ms forwards;
-    & h2 {
-        font-size: 2em;
-        margin-bottom: 10px;
-        font-family: 'Roboto', sans-serif;
-    }
-    & p {
-        margin-bottom: 30px;
-        font-family: 'Raleway', sans-serif;
-    }
-    
+  width: 100%;
+  margin-top: 80px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-100%);
+  animation: start 500ms forwards;
+  & h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+  }
+  & p {
+    margin-bottom: 30px;
+    font-family: "Raleway", sans-serif;
+  }
 }
 
 .projet-header__container {
-    position: relative;
-    
-    display: flex;
-    width: 80%;
-    padding: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    
-    align-items: center;
-    justify-content: center;
-   
+  position: relative;
+
+  display: flex;
+  width: 80%;
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .projet-header {
-    font-size: 3rem;
-    font-family: "Inter",sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    z-index: 1;
-    @media (max-width: 992px) { 
-        font-size: 2.5rem; 
-      }
-      @media (max-width: 576px) { 
-        font-size: 1.5em; 
-      }
+  font-size: 3rem;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 1;
+  @media (max-width: 992px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 1.5em;
+  }
 }
 
 .projet-header__background {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    animation: start 1s 200ms forwards;
-    transform: translatey(-100%);
-    background-color: white;
-    z-index: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: start 1s 200ms forwards;
+  transform: translatey(-100%);
+  background-color: white;
+  z-index: 0;
 }
 
 .projet-image__container {
-    width: 40%;
-    height: auto;
-    z-index: 1;
-    overflow: hidden;
-   position: relative;
-    & img {
-        
-        width: 100%;
-        animation: start 200ms 500ms forwards;
-       opacity: 0;
-    }
-    @media (max-width: 992px) { 
-        width: 90%;
-      }
+  width: 40%;
+  height: auto;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  & img {
+    width: 100%;
+    animation: start 200ms 500ms forwards;
+    opacity: 0;
+  }
+  @media (max-width: 992px) {
+    width: 90%;
+  }
 }
 
 .projet-image__background {
-    position: absolute;
-    background-color: black;
-    height: 100%;
-    width: 200%;
-    left: 0;
-    top: 0;
-    transform: translateX(-100%);
-    animation: image-load 2s 200ms forwards;
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 200%;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  animation: image-load 2s 200ms forwards;
 }
 
-
-.projet-context__container, .projet-description__container, .projet-link__container {
-    text-align: center;
-    width: 40%;
-    z-index: 1;
-    background-color: inherit;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    @media (max-width: 992px) { 
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
+.projet-context__container,
+.projet-description__container,
+.projet-link__container {
+  text-align: center;
+  width: 40%;
+  z-index: 1;
+  background-color: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (max-width: 992px) {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
-
-.projet-context__container h2, .projet-description__container h2, .projet-link__container h2 {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.projet-context__container h2,
+.projet-description__container h2,
+.projet-link__container h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .projet-context__container {
-    
-    margin-top: 100px;
-    opacity: 0;
-    transform: translateY(-50%);
-    animation: start 500ms 200ms forwards;
-    @media (max-width: 992px) { 
-        margin-top: 20px;
-      }
+  margin-top: 100px;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation: start 500ms 200ms forwards;
+  @media (max-width: 992px) {
+    margin-top: 20px;
+  }
 }
 
-
-
 .projet-next {
-    position: absolute;
-    right: 0;
-    top: 10px;
-    padding:10px;
-    & a {
-        color: black;
-    }
+  position: absolute;
+  right: 0;
+  top: 10px;
+  padding: 10px;
+  & a {
+    color: black;
+  }
 }
 
 .projet-previous {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    padding:10px;
-    & a {
-        color: black;
-    }
+  position: absolute;
+  left: 0;
+  top: 10px;
+  padding: 10px;
+  & a {
+    color: black;
+  }
 }
 
-
 #particle-container {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .particle {
-	position: absolute;
- 	border-radius: 50%;
+  position: absolute;
+  border-radius: 50%;
 }
 
 @for $i from 1 through 30 {
-	@keyframes particle-animation-#{$i} {
-		100% {
-			transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
-		}
-	}
-	
-	.particle:nth-child(#{$i}){
-		animation: particle-animation-#{$i} 60s infinite;
-		$size: random(5) + 5 + px;
-		opacity: random(100)/100;
-		height: $size;
-		width: $size;
-		animation-delay: -$i * .2s;
-		transform: translate3d((random(90) * 1vw), (random(180) * 1vh), (random(100) * 1px));
-		background: hsl(random(360), 70%, 50%);
-	}
+  @keyframes particle-animation-#{$i} {
+    100% {
+      transform: translate3d(
+        (random(90) * 1vw),
+        (random(90) * 1vh),
+        (random(100) * 1px)
+      );
+    }
+  }
+
+  .particle:nth-child(#{$i}) {
+    animation: particle-animation-#{$i} 60s infinite;
+    $size: random(5) + 5 + px;
+    opacity: calc(random(100) / 100);
+    height: $size;
+    width: $size;
+    animation-delay: -$i * 0.2s;
+    transform: translate3d(
+      (random(90) * 1vw),
+      (random(180) * 1vh),
+      (random(100) * 1px)
+    );
+    background: hsl(random(360), 70%, 50%);
+  }
 }

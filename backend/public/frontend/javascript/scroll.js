@@ -3,7 +3,6 @@ const accueilDOM = document.querySelector("#accueil"),
   realisationDOM = document.querySelector(".realisation"),
   filterDOM = document.querySelector("#realisation-filter");
 
-  
 function offsetTop(a, b = 0) {
   return a.offsetParent
     ? offsetTop(a.offsetParent, b + a.offsetTop)
@@ -61,20 +60,7 @@ class Parallax {
     );
   }
 }
-function presentationTitle() {
-  new IntersectionObserver(
-    function (a, b) {
-      a.forEach(function (a) {
-        a.intersectionRatio > 0.1 &&
-          (document
-            .querySelector("#presentation-title")
-            .classList.add("unzoom"),
-          b.unobserve(a.target));
-      });
-    },
-    { root: null, rootMargin: "0px", threshold: 0.1 }
-  ).observe(document.querySelector(".presentation-one"));
-}
+
 function appear() {
   let a = new IntersectionObserver(
     function (a, b) {
@@ -87,33 +73,112 @@ function appear() {
   );
   document.querySelectorAll(".appear-scroll").forEach((b) => a.observe(b));
 }
-Parallax.bind(), presentationTitle(), appear();
+Parallax.bind(), appear();
 
+function presentationAppear() {
+  let a = new IntersectionObserver(
+    function (a, b) {
+      a.forEach(function (a) {
+        a.intersectionRatio > 0.2 &&
+          (document
+            .querySelector(".presentation-container")
+            .classList.add("appear-container-a"),
+          b.unobserve(a.target));
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.2 }
+  );
+  document.querySelectorAll(".presentation").forEach((b) => a.observe(b));
+}
+presentationAppear();
 
-function appearLeft() {
+function presentationTitleAppear() {
   let a = new IntersectionObserver(
     function (a, b) {
       a.forEach(function (a) {
         a.intersectionRatio > 0.25 &&
-          (a.target.classList.add("appear-left"), b.unobserve(a.target));
+          (a.target.classList.add("appear-title-a"), b.unobserve(a.target));
       });
     },
     { root: null, rootMargin: "0px", threshold: 0.25 }
   );
-  document.querySelectorAll(".separator").forEach((b) => a.observe(b));
+  document.querySelectorAll(".appear-title").forEach((b) => a.observe(b));
 }
-appearLeft();
+presentationTitleAppear();
 
-function appearTop() {
+function presentationTextAppear() {
   let a = new IntersectionObserver(
     function (a, b) {
       a.forEach(function (a) {
-        a.intersectionRatio > 0.25 &&
-          (a.target.classList.add("appear-top"), b.unobserve(a.target));
+        a.intersectionRatio > 0.3 &&
+          (a.target.classList.add("appear-text-a"), b.unobserve(a.target));
       });
     },
-    { root: null, rootMargin: "0px", threshold: 0.25 }
+    { root: null, rootMargin: "0px", threshold: 0.3 }
   );
-  document.querySelectorAll(".presentation-one-text__background").forEach((b) => a.observe(b));
+  document.querySelectorAll(".appear-text").forEach((b) => a.observe(b));
 }
-appearTop();
+presentationTextAppear();
+
+function presentationPhotoAppear() {
+  const ratioA = 0.25; // 25% de l'élement doit être visible
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratioA,
+  };
+
+  const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > ratioA) {
+        entry.target.children[0].style.opacity = "1";
+        entry.target.children[1].classList.add("appear-photo-a");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+  document.querySelectorAll(".appear-photo").forEach(function (r) {
+    observer.observe(r);
+  });
+}
+setTimeout(()=> {presentationPhotoAppear()},500);
+
+function introAppear() {
+  const ratioA = 0.1; // 25% de l'élement doit être visible
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratioA,
+  };
+
+  const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > ratioA) {
+        if(window.matchMedia("(max-width:992px)").matches) {
+
+          setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/realisation-intro.webp) no-repeat bottom right fixed`},500)
+
+        } else {
+          setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/realisation-intro.webp) no-repeat top right fixed`},500)
+       
+        }
+      
+        
+        entry.target.children[0].classList.add("appear-photo-a");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+  document.querySelectorAll(".realisation-intro").forEach(function (r) {
+    observer.observe(r);
+  });
+}
+introAppear();

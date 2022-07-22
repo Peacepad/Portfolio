@@ -25,13 +25,45 @@ async function realisationsMain() {
         realisationsList.appendChild(realisationDiv);
   
         // Création de l'image
-        realisationDiv.style.backgroundImage = `url(${realisations[l].image})`;
+        let realisationImageDiv = document.createElement('div');
+        realisationImageDiv.setAttribute('class', 'realisation-image appear-photo');
+        realisationDiv.appendChild(realisationImageDiv);
+
+        
+
+        let realisationImage = document.createElement('img');
+        realisationImage.setAttribute('src',`${realisations[l].image}`);
+        realisationImage.setAttribute('alt',`Photo du projet: ${realisations[l].name}`)
+        realisationImageDiv.appendChild(realisationImage);
+
+        let realisationImageBackground = document.createElement('div');
+        realisationImageBackground.setAttribute('class','photo__background');
+        realisationImageDiv.appendChild(realisationImageBackground);
+
+
+        // Création du titre
+        let realisationTitle = document.createElement('p');
+        realisationTitle.innerText = `${realisations[l].name}`;
+        realisationTitle.setAttribute('class', "realisation-title")
+        realisationDiv.appendChild(realisationTitle);
+
+        
         // Création du lien
-        let realisationButton = document.createElement('a');
+        let realisationButtonLink = document.createElement('a');
+        realisationButtonLink.setAttribute('href', `projets/projet.html?id=${realisations[l].id}`);
+        realisationDiv.appendChild(realisationButtonLink)
+
+        let realisationButton = document.createElement('div');
         realisationButton.setAttribute('class', "realisation-link");
-        realisationButton.setAttribute('href', `projets/projet.html?id=${realisations[l].id}`);
-        realisationButton.innerText = "En voir plus sur le projet";
-        realisationDiv.appendChild(realisationButton);
+        
+        
+        realisationButtonLink.appendChild(realisationButton);
+
+        let realisationButtonText = document.createElement('div');
+        realisationButtonText.setAttribute("class", "button-text");
+        realisationButtonText.innerText = "En voir plus sur le projet";
+        realisationButton.appendChild(realisationButtonText)
+
       }
     }
   
@@ -39,56 +71,6 @@ async function realisationsMain() {
   
  
   
-    // Ajout du titre, description au survol de l'élément
-    async function realisationHover() {
-      let realisationsDOM = document.querySelectorAll(".realisation");
-  
-      for (let i = 0; i < realisationsDOM.length; i++) {
-        realisationsDOM[i].addEventListener("mouseover", () => {
-          document.querySelector(
-            "#realisation-name"
-          ).innerText = `${realisations[i].name}`;
-          document.querySelector(
-            "#realisation-description"
-          ).innerText = `${realisations[i].description}`;
-          document.querySelector('#realisation-letter').innerText = `${realisations[i].name.charAt(0)}`;
-
-          // ajout des effets de style
-          setTimeout(() => {
-            document.querySelector(
-                "#realisation-name"
-              ).classList.add("show");
-              document.querySelector(
-                "#realisation-description"
-              ).classList.add("show");
-              document.querySelector(
-                "#realisation-letter"
-              ).classList.add("show-letter");
-            });
-          },100)
-          
-
-        realisationsDOM[i].addEventListener("mouseout", () => {
-            // ajout des effets de style
-            setTimeout(() => {
-      
-            
-          document.querySelector(
-            "#realisation-name"
-          ).classList.remove("show");
-          document.querySelector(
-            "#realisation-description"
-          ).classList.remove("show");
-          document.querySelector(
-            "#realisation-letter"
-          ).classList.remove("show-letter");
-        });
-      },5)
-        
-      }
-    }
-  
-    realisationHover(realisations);
-};
+  }
   
   realisationsMain();
