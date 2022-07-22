@@ -35,7 +35,16 @@
 
 }
 
-
+#presentation-title {
+  left:40%;
+  @media (max-width:768px) {
+    left:20%
+  }
+  @media (max-width:576px) {
+    font-size: 3rem;
+    left: 30%;
+  }
+}
 
 .presentation-one {
   z-index: 1;

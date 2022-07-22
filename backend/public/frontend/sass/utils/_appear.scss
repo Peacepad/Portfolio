@@ -50,7 +50,7 @@
 
 .appear-title {
     position: absolute;
-    left: 40%;
+ 
     top: -80px;
     font-family: 'Open Sans', sans-serif;
     font-size: 4.8rem;
@@ -58,13 +58,7 @@
     text-transform: uppercase;
     transform: translateY(50%);
     opacity: 0;
-    @media (max-width:768px) {
-      left:20%
-    }
-    @media (max-width:576px) {
-      font-size: 3rem;
-      left: 30%;
-    }
+   
   }
 
   .photo__background {
