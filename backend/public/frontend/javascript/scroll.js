@@ -159,12 +159,12 @@ function introAppear() {
   const handleIntersect = function (entries, observer) {
     entries.forEach(function (entry) {
       if (entry.intersectionRatio > ratioA) {
-        if(window.matchMedia("(max-width:992px)").matches) {
+        if(!window.matchMedia("(max-width:992px)").matches) {
 
           setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/realisation-intro.webp) no-repeat bottom right fixed`},500)
 
         } else {
-          setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/realisation-intro.webp) no-repeat top right fixed`},500)
+          setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/realisation-intro-mini.jpg) no-repeat bottom right fixed`},500)
        
         }
       
