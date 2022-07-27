@@ -1,15 +1,15 @@
 @import "./utils/variables";
 @import "./components/navigation";
-@import "./components/accueil";
+@import "./layouts/accueil";
 @import "./utils/button";
-@import "./components/presentation";
+@import "./layouts/presentation";
 @import "./components/contact-form";
-@import "./components/realisation";
-@import "./components/contact";
-@import "./components/realisation-intro";
+@import "./layouts/realisations";
+@import "./layouts/contact";
+@import "./components/realisations-intro";
 @import "./components/contact-intro";
 @import "./utils/appear";
-@import "./components/projet";
+@import "./pages/projet";
 @import "./components/comments";
 
 * {
@@ -19,8 +19,4 @@
   scroll-behavior: smooth;
 }
 
-body {
-
-
-}
 

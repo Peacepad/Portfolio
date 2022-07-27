@@ -177,7 +177,7 @@ function introAppear() {
   };
 
   const observer = new IntersectionObserver(handleIntersect, options);
-  document.querySelectorAll(".realisation-intro").forEach(function (r) {
+  document.querySelectorAll(".realisations-intro").forEach(function (r) {
     observer.observe(r);
   });
 }
