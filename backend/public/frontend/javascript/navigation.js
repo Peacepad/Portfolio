@@ -34,7 +34,7 @@ function underlineNavigation() {
       let a = new IntersectionObserver(
         function (a, b) {
           a.forEach(function (a) {
-            if (a.intersectionRatio >= 0.2) {
+            if (a.intersectionRatio >= 0.15) {
               let b =
                 document.querySelector("#navigation-about__link").offsetWidth +
                 document.querySelector("#navigation-realisation__link")
@@ -46,7 +46,7 @@ function underlineNavigation() {
             }
           });
         },
-        { root: null, rootMargin: "0px", threshold: 0.3 }
+        { root: null, rootMargin: "0px", threshold: 0.15 }
       );
       a.observe(document.querySelector("#realisations"));
     })(),
@@ -54,7 +54,7 @@ function underlineNavigation() {
       let a = new IntersectionObserver(
         function (a, b) {
           a.forEach(function (a) {
-            if (a.intersectionRatio >= 0.5) {
+            if (a.intersectionRatio >= 0.2) {
               let b =
                 document.querySelector("#navigation-about__link").offsetWidth +
                 document.querySelector("#navigation-realisation__link")
@@ -68,7 +68,7 @@ function underlineNavigation() {
             }
           });
         },
-        { root: null, rootMargin: "0px", threshold: 0.5 }
+        { root: null, rootMargin: "0px", threshold: 0.2 }
       );
       a.observe(document.querySelector("#contact"));
     })();
