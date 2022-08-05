@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
+
+    <link href="./css/degrade.css" rel="stylesheet" />
+
+    <!-- Icones -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Lato:wght@100;300;400&family=Open+Sans:wght@400;500;600;800&family=Pacifico&family=Roboto:wght@400;700&family=Uchen&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO -->
+    <meta
+      name="keywords"
+      content="Pierre-Antoine, Delamare, développeur web, web design, fullStack, valence, SEO, création, site web, rhône-alpes, créer un site, frontend, backend, commander site web, portfolio"
+    />
+
+    <meta
+      name="description"
+      content="Pierre-Antoine Delamare développeur web FullStack. Application météo"
+    />
+
+    <meta
+      name="google-site-verification"
+      content="LOUl-5ed3E0xiXGvmSuNy0rSm-rCBwlZzYQFU8h5gPs"
+    />
+
+    <link rel="canonical" href="https://pa-delamare.fr" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <title>Pierre-Antoine - Dégradé</title>
+  </head>
+  <body>
+
+    <nav class="navigation-projet">
+      <a href="../../index.html"
+        ><span class="material-symbols-outlined"> arrow_back </span> Accueil</a
+      >
+    </nav>
+
+
+    <div class="container">
+      <div class="input-group">
+        <label for="input-color1" class="color-label">#FF5F6D</label>
+        <input type="color" id="input-color1" />
+      </div>
+
+      <div class="input-group">
+        <label for="input-color2" class="color-label">#FFC371</label>
+        <input type="color"  id="input-color2" />
+      </div>
+
+      <div class="range-group">
+        <label for="range-input">
+          <span>Orientation: </span>
+          <span class="orientation-value">90°</span>
+        </label>
+        <input
+          type="range"
+          min="0"
+          max="360"
+          value="90"
+          id="orientation-input"
+        />
+      </div>
+
+      <div class="buttons-container">
+        <button class="copy-btn" type="button">Copier</button>
+        <button class="random-btn" type="button">Aléatoire</button>
+      </div>
+    </div>
+
+    <script src="./javascript/degrade.js"></script>
+  </body>
+</html>

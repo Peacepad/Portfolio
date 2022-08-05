@@ -147,8 +147,8 @@ function presentationPhotoAppear() {
 }
 setTimeout(()=> {presentationPhotoAppear()},500);
 
-function introAppear() {
-  const ratioA = 0.1; // 25% de l'élement doit être visible
+function realIntro() {
+  const ratioA = 0.1; 
 
   const options = {
     root: null,
@@ -181,4 +181,39 @@ function introAppear() {
     observer.observe(r);
   });
 }
-introAppear();
+realIntro();
+
+function diversIntro() {
+  const ratioA = 0.2; 
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratioA,
+  };
+
+  const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > ratioA) {
+        
+
+          setTimeout(() => { entry.target.style.background = `#e1dbd6 url(images/divers.jpeg) no-repeat top fixed`},500)
+
+        
+         
+        
+      
+        
+        entry.target.children[0].classList.add("appear-photo-a");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+  document.querySelectorAll(".divers-intro").forEach(function (r) {
+    observer.observe(r);
+  });
+}
+diversIntro()

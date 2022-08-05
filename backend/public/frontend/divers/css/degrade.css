@@ -1,0 +1,165 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(90deg,#FF5F6D,#FFC371);
+  padding: clamp(20px, 20vw, 200px) 20px 0;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: clamp(30px, 30%, 300px);
+}
+
+.input-group {
+  width: 100%;
+  margin: 10px 0px;
+  height: 50px;
+  border: solid 1px white;
+  border-radius: 3px;
+  background: none;
+  outline: none;
+  font-weight: 600;
+}
+
+.color-label {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding: 15px;
+}
+
+.input-group input {
+  visibility: none;
+}
+
+input[type="color"] {
+  visibility: hidden;
+}
+.range-group {
+  display: flex;
+  flex-direction: column;
+}
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttons-container button {
+  margin: 0px 10px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border:solid 1px black;
+}
+
+.copy-btn {
+  position: relative;
+}
+.copy-btn::after {
+  content: "Copié !";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  bottom: -75%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  white-space: nowrap;
+  opacity: 0;
+}
+.copy-btn.active::after {
+  animation: fade-out 1s ease-out forwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+}
+
+
+
+
+.navigation-projet {
+  padding: 20px;
+  text-transform: uppercase;
+  font-family: "open sans", sans-serif;
+  font-weight: 600;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  
+}
+
+.navigation-projet a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.6em !important;
+ 
+}
+
+
+
+
+.navigation-projet a span::after {
+  content: "";
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 200ms;
+  transform-origin: right;
+}
+.navigation-projet a span:hover::after {
+  transform: scaleX(7);
+ 
+}
+
+@media (max-width: 996px) {
+  .navigation-projet a span:hover::after {
+    transform: scaleX(7);
+  }
+  
+  .navigation-projet a span {
+      font-size: 1em !important;
+      line-height: 1.3;
+  }
+
+  .navigation-projet a {
+
+      font-size: 1.2em !important;
+    }
+  
+    .navigation-projet a span {
+     
+        font-size: 1em !important;
+        line-height: 1.3;
+      
+    }
+}

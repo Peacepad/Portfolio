@@ -21,7 +21,7 @@ app.use(express.static('public'));
 
 app.use('/projets', express.static("./public/frontend/projets"));
 app.use('/images', express.static("./public/frontend/public/images"));
-
+app.use('/divers', express.static("./public/frontend/divers"))
 
 app.use("/api/projet", projetRoutes);
 app.use("/api/contact", contactRoutes);
