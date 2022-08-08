@@ -212,7 +212,7 @@ function diversIntro() {
   };
 
   const observer = new IntersectionObserver(handleIntersect, options);
-  document.querySelectorAll(".divers-intro").forEach(function (r) {
+  document.querySelectorAll(".creations-intro").forEach(function (r) {
     observer.observe(r);
   });
 }
