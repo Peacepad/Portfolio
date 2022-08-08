@@ -87,22 +87,24 @@ function verifyScore(scoreCount) {
     if (card.firstElementChild.classList.contains("active")) {
       cardCount++;
       if (cardCount == cards.length) {
-        advice.textContent = `Bravo ! Appuyez sur "espace" pour relancer une partie.`;
+        advice.innerHTML = `Bravo ! Cliquez <a href="#" class="restart">ici</a> pour relancer une partie.`;
         score.textContent = `Votre score final: ${scoreCount}`;
+
+        document.querySelector('.restart').addEventListener("click", handleRestart)
       }
     }
   });
 }
 
-window.addEventListener("keydown", handleRestart)
+
 
 function handleRestart(e) {
-    if(e.keyCode === 32) {
+    e.preventDefault();
         cards.forEach(card => card.firstElementChild.classList.remove('active'));
         setTimeout(shuffleCards,500);
         advice.textContent = `Tentez de gagner avec le moins d'essais possible.`;
         score.textContent = `Nombre de coups : 0`;
         scoreCount = 0
         cardCount = 0
-    }
+    
 }

@@ -85,14 +85,14 @@ navBtn.addEventListener("click", handleNavBtn);
 function handleNavBtn(e) {
 
   if(navHidden) {
-    navMobile.style.display = "flex";
-    navMobile.style.opacity = "1";
+    
+    navMobile.style.transform = "translateY(0%)";
     navHidden = false;
     navBtn.style.color = "white";
   }
   else {
-    navMobile.style.display = "none";
-    navMobile.style.opacity = "0";
+    
+    navMobile.style.transform = "translateY(-100%)";
     navHidden = true;
     navBtn.style.color = "black";
   }

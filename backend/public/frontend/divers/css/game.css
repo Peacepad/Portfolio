@@ -9,7 +9,7 @@
 body {
   min-height: 100vh;
   font-family: lato, Helvetica, sans-serif;
-  background: linear-gradient(to right, #d17608, #ec3503);
+  background: linear-gradient(250deg, #186E8B, #22398D);
   padding: clamp(20px, 5vw, 50px) 20px 10px;
 }
 
@@ -99,7 +99,7 @@ h1 span {
   text-transform: uppercase;
   font-family: "open sans", sans-serif;
   font-weight: 600;
-  background-color: black;
+  background-color: white;
   position: fixed;
   left: 0;
   top: 0;
@@ -109,7 +109,7 @@ h1 span {
 }
 
 .navigation-projet a {
-  color: white;
+  color: black;
   text-decoration: none;
   position: relative;
   font-size: 1.6em !important;
