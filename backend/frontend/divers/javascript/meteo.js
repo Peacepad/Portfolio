@@ -6,6 +6,7 @@ if (navigator.geolocation) {
       const lon = location.coords.longitude;
       const lat = location.coords.latitude;
       callMeteoApi(lon, lat);
+      findCity(lon, lat);
     },
     () => {
       loader.textContent =
@@ -18,7 +19,7 @@ const errorMsg = document.querySelector(".error-msg");
 const meteoBottom = document.querySelector(".meteo-bottom");
 
 async function callMeteoApi(lon, lat) {
-  const key = "4a1dde7a1259b76f127f46f8db9ec77a";
+  const key = "a783ff1b655a8efef32760dc98437171";
 
   try {
     const response = await fetch(
@@ -34,11 +35,11 @@ async function callMeteoApi(lon, lat) {
 
     meteoBottom.style.transform = "translateY(0)";
 
-    
+    console.log(data);
     displayTop(data);
     displayForecast(data);
   } catch (err) {
-    errorMsg.textContent="Erreur lors du chargement.."
+    console.log(err);
   }
 }
 
@@ -77,7 +78,7 @@ const currentDay = new Date().toLocaleDateString("fr-FR", { weekday: "long" });
 
 function displayForecast(data) {
   hoursName.forEach((hourDiv, index) => {
-    const incrementedHour = currentHour + index * 3;
+    const incrementedHour = currentHour + index * 3 + 1;
 
     if (incrementedHour > 24) {
       const calcul = incrementedHour - 24;
@@ -89,7 +90,7 @@ function displayForecast(data) {
     }
 
     hoursTemps[index].textContent = `${Math.trunc(
-      data.hourly[index * 3].temp
+      data.hourly[index * 3 + 1].temp
     )}°`;
   });
 
@@ -137,3 +138,21 @@ function handleTabs(e) {
   tabsContents[indexToShow].classList.add("active");
 }
 
+const locationDiv = document.querySelector(".location");
+
+async function findCity(lon, lat) {
+  try {
+    const response = fetch(
+      `https://api-adresse.data.gouv.fr/reverse/?lon=${lon}&lat=${lat}&type=street`,
+      { method: "GET" }
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        locationDiv.textContent = `${data.features[0].properties.city}`;
+      });
+  } catch (error) {
+    console.log(error);
+  }
+}
