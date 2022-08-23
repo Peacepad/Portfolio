@@ -1,9 +1,9 @@
 const contactForm = document.querySelector("#contact-form");
 
-let firstnameDOM = document.querySelector("#contact-firstname");
-let lastnameDOM = document.querySelector("#contact-lastname");
-let emailDOM = document.querySelector("#contact-email");
-let messageDOM = document.querySelector("#contact-message");
+const firstnameDOM = document.querySelector("#contact-firstname");
+const lastnameDOM = document.querySelector("#contact-lastname");
+const emailDOM = document.querySelector("#contact-email");
+const messageDOM = document.querySelector("#contact-message");
 
 let nameRegex =
   /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
@@ -61,14 +61,32 @@ async function fetchData(contactBody) {
   });
 }
 
-let contactInputs = [firstnameDOM, lastnameDOM, emailDOM];
+const contactInputs = contactForm.querySelectorAll('input');
+const spanHidden = contactForm.querySelectorAll('.label-hidden');
 
-// Le soulignement reprend sa couleur d'origine
-contactInputs.forEach((element) => {
-  element.addEventListener("input", () => {
+
+contactInputs.forEach((element,index) => {
+  element.addEventListener("input", (e) => {
     element.style.borderBottomColor = "#6c6b6b";
+
+    if(e.target.value == "") {
+      spanHidden[index].classList.remove('label-active');
+    } else {
+      spanHidden[index].classList.add('label-active');
+    }
+    
+    
   });
 });
+
+messageDOM.addEventListener('input', (e) => {
+  if(e.target.value == "") {
+    spanHidden[3].classList.remove('label-active');
+  }
+  else {
+    spanHidden[3].classList.add('label-active');
+  }
+})
 
 // Le bouton annuler efface tout
 
@@ -79,3 +97,7 @@ document.querySelector("#contact-cancel").addEventListener("click", (e) => {
   emailDOM.value = "";
   messageDOM.value = "";
 });
+
+
+
+

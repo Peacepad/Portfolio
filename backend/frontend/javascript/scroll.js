@@ -61,51 +61,8 @@ class Parallax {
   }
 }
 
-function appear() {
-  let a = new IntersectionObserver(
-    function (a, b) {
-      a.forEach(function (a) {
-        a.intersectionRatio > 0.25 &&
-          (a.target.classList.add("appear"), b.unobserve(a.target));
-      });
-    },
-    { root: null, rootMargin: "0px", threshold: 0.25 }
-  );
-  document.querySelectorAll(".appear-scroll").forEach((b) => a.observe(b));
-}
-Parallax.bind(), appear();
 
-function presentationAppear() {
-  let a = new IntersectionObserver(
-    function (a, b) {
-      a.forEach(function (a) {
-        a.intersectionRatio > 0.2 &&
-          (document
-            .querySelector(".presentation-container")
-            .classList.add("appear-container-a"),
-          b.unobserve(a.target));
-      });
-    },
-    { root: null, rootMargin: "0px", threshold: 0.2 }
-  );
-  document.querySelectorAll(".presentation").forEach((b) => a.observe(b));
-}
 
-presentationAppear();
-
-function titlesAppear() {
-  let a = new IntersectionObserver(
-    function (a, b) {
-      a.forEach(function (a) {
-        a.intersectionRatio > 0.25 &&
-          (a.target.classList.add("appear-title-a"), b.unobserve(a.target));
-      });
-    },
-    { root: null, rootMargin: "0px", threshold: 0.25 }
-  );
-  document.querySelectorAll(".appear-title").forEach((b) => a.observe(b));
-}
-titlesAppear();
 
 function textsAppear() {
   let a = new IntersectionObserver(
@@ -121,32 +78,18 @@ function textsAppear() {
 }
 textsAppear();
 
-function photosAppear() {
-  const ratioA = 0.25; // 25% de l'élement doit être visible
 
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: ratioA,
-  };
-
-  const handleIntersect = function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.intersectionRatio > ratioA) {
-        entry.target.children[0].style.opacity = "1";
-        entry.target.children[1].classList.add("appear-photo-a");
-
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(handleIntersect, options);
-  document.querySelectorAll(".appear-photo").forEach(function (r) {
-    observer.observe(r);
-  });
-}
-setTimeout(() => {
-  photosAppear();
-}, 500);
+function imagesAppear() {
+    let a = new IntersectionObserver(
+      function (a, b) {
+        a.forEach(function (a) {
+          a.intersectionRatio > 0.3 &&
+            (a.target.classList.add("appear-img-a"), b.unobserve(a.target));
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.3 }
+    );
+    document.querySelectorAll(".appear-img").forEach((b) => a.observe(b));
+  }
+  imagesAppear();
 

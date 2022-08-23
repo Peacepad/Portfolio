@@ -1,8 +1,9 @@
 let params = new URL(document.location).searchParams;
 let projetid = parseInt(params.get("id"));
 
-const projetContainer = document.querySelector("#projet");
-
+const projetContainer = document.querySelector(".projet-container");
+const projetHeader = document.querySelector('.projet-header');
+const projetHeaderTitle= projetHeader.querySelector('h1');
 // recherche des données sur le projet
 
 async function fetchProjet() {
@@ -23,21 +24,10 @@ async function showFetchProjet() {
   const projet = await fetchProjet();
 
   // Projet titre
-  let projetHeaderContainer = document.createElement("div");
-  projetContainer.appendChild(projetHeaderContainer);
-  projetHeaderContainer.setAttribute(
-    "class",
-    "projet-header__container appear"
-  );
+ 
+  projetHeaderTitle.innerText = `${projet[0].name}`;
 
-  let projetHeader = document.createElement("h1");
-  projetHeader.setAttribute("class", "projet-header");
-  projetHeader.innerText = `${projet[0].name}`;
-  projetHeaderContainer.appendChild(projetHeader);
-
-  let projetHeaderBackground = document.createElement("div");
-  projetHeaderBackground.setAttribute("class", "projet-header__background");
-  projetHeaderContainer.appendChild(projetHeaderBackground);
+  
 
   // Projet Context
   let projetContextContainer = document.createElement("div");

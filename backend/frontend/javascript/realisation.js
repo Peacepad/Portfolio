@@ -21,6 +21,7 @@ async function realisationsMain() {
       // Création d'une div par realisation
       let realisationDiv = document.createElement("div");
       realisationDiv.setAttribute("class", "realisation");
+     
       realisationDiv.setAttribute("id", `realisation__${realisations[l].id}`);
       realisationsList.appendChild(realisationDiv);
 
@@ -65,7 +66,7 @@ async function realisationsMain() {
 
       let realisationButtonText = document.createElement("div");
       realisationButtonText.setAttribute("class", "button-text");
-      realisationButtonText.innerText = "En voir plus sur le projet";
+      realisationButtonText.innerText = "En voir plus";
       realisationButton.appendChild(realisationButtonText);
     }
   }

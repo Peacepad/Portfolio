@@ -7,13 +7,19 @@ function handleNavBtn() {
   if(navHidden) {
     navMobile.style.transform = "translateY(0%)";
     navHidden = false;
-    navBtn.style.color = "white";
+    navBtn.style.opacity ="0";
+    setTimeout(`navBtn.innerHTML = '<span class="material-symbols-outlined"> close </span>'`,300);
+    setTimeout(`navBtn.style.opacity ="1"`,300);
+
+    
   }
   else {
     
     navMobile.style.transform = "translateY(-100%)";
     navHidden = true;
-    navBtn.style.color = "black";
+    navBtn.style.opacity ="0";
+    setTimeout(`navBtn.innerHTML = '<span class="material-symbols-outlined"> menu </span>'`,300);
+    setTimeout(`navBtn.style.opacity ="1"`,300);
   }
 }
 
