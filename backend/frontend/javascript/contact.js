@@ -61,32 +61,28 @@ async function fetchData(contactBody) {
   });
 }
 
-const contactInputs = contactForm.querySelectorAll('input');
-const spanHidden = contactForm.querySelectorAll('.label-hidden');
+const contactInputs = contactForm.querySelectorAll("input");
+const spanHidden = contactForm.querySelectorAll(".label-hidden");
 
-
-contactInputs.forEach((element,index) => {
+contactInputs.forEach((element, index) => {
   element.addEventListener("input", (e) => {
     element.style.borderBottomColor = "#6c6b6b";
 
-    if(e.target.value == "") {
-      spanHidden[index].classList.remove('label-active');
+    if (e.target.value == "") {
+      spanHidden[index].classList.remove("label-active");
     } else {
-      spanHidden[index].classList.add('label-active');
+      spanHidden[index].classList.add("label-active");
     }
-    
-    
   });
 });
 
-messageDOM.addEventListener('input', (e) => {
-  if(e.target.value == "") {
-    spanHidden[3].classList.remove('label-active');
+messageDOM.addEventListener("input", (e) => {
+  if (e.target.value == "") {
+    spanHidden[3].classList.remove("label-active");
+  } else {
+    spanHidden[3].classList.add("label-active");
   }
-  else {
-    spanHidden[3].classList.add('label-active');
-  }
-})
+});
 
 // Le bouton annuler efface tout
 
@@ -96,8 +92,5 @@ document.querySelector("#contact-cancel").addEventListener("click", (e) => {
   lastnameDOM.value = "";
   emailDOM.value = "";
   messageDOM.value = "";
+  spanHidden.forEach((span) => span.classList.remove("label-active"));
 });
-
-
-
-

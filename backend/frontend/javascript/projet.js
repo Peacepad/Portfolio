@@ -2,8 +2,8 @@ let params = new URL(document.location).searchParams;
 let projetid = parseInt(params.get("id"));
 
 const projetContainer = document.querySelector(".projet-container");
-const projetHeader = document.querySelector('.projet-header');
-const projetHeaderTitle= projetHeader.querySelector('h1');
+const projetHeader = document.querySelector(".projet-header");
+const projetHeaderTitle = projetHeader.querySelector("h1");
 // recherche des données sur le projet
 
 async function fetchProjet() {
@@ -24,10 +24,8 @@ async function showFetchProjet() {
   const projet = await fetchProjet();
 
   // Projet titre
- 
-  projetHeaderTitle.innerText = `${projet[0].name}`;
 
-  
+  projetHeaderTitle.innerText = `${projet[0].name}`;
 
   // Projet Context
   let projetContextContainer = document.createElement("div");
@@ -50,12 +48,12 @@ async function showFetchProjet() {
 
   let projetImage = document.createElement("img");
   projetImage.setAttribute("src", `${projet[0].image}`);
-  projetImage.setAttribute('alt', "Aperçu du projet");
+  projetImage.setAttribute("alt", "Aperçu du projet");
   projetImageContainer.appendChild(projetImage);
 
-  let projetImageBackground = document.createElement('div');
+  let projetImageBackground = document.createElement("div");
   projetImageBackground.setAttribute("class", "projet-image__background");
-  projetImageContainer.appendChild(projetImageBackground)
+  projetImageContainer.appendChild(projetImageBackground);
 
   // Projet Description
   let projetDescriptionContainer = document.createElement("div");
@@ -126,11 +124,9 @@ async function nextProjet() {
   if (projetid == projetNumberMax) {
     nextProjetNumber = 1;
   } else {
-    nextProjetNumber = projetid +1;
+    nextProjetNumber = projetid + 1;
   }
-  nextProjetDiv.innerHTML = `<a href="./projet.html?id=${nextProjetNumber}" alt="Projet suivant"><span class="material-symbols-outlined">
-  arrow_forward_ios
-  </span></a>`;
+  nextProjetDiv.innerHTML = `<a href="./projet.html?id=${nextProjetNumber}" alt="Projet suivant"><img src="../public/images/icons/arrow_forward.svg" alt="aller en avant" /></a>`;
   projetContainer.appendChild(nextProjetDiv);
 }
 nextProjet();
@@ -145,30 +141,28 @@ async function previousProjet() {
 
   let previousProjetNumber;
 
-if (projetid == projetNumberMin) {
-  previousProjetNumber = projetNumberMax;
-} else {
-  previousProjetNumber = projetid -1;
-}
+  if (projetid == projetNumberMin) {
+    previousProjetNumber = projetNumberMax;
+  } else {
+    previousProjetNumber = projetid - 1;
+  }
 
-
-previousProjetDiv.innerHTML = `<a href="./projet.html?id=${previousProjetNumber}" alt="Projet précédent"><span class="material-symbols-outlined">
-arrow_back_ios
-</span></a>`;
-
-
-
+  previousProjetDiv.innerHTML = `<a href="./projet.html?id=${previousProjetNumber}" alt="Projet précédent"><img src="../public/images/icons/arrow_back.svg" alt="aller en arrière" /></a>`;
 
   projetContainer.appendChild(previousProjetDiv);
 }
 
-previousProjet()
-
+previousProjet();
 
 //
 async function SEO() {
   const projet = await getRealisations();
-  document.querySelector('meta[name="keywords"]').setAttribute('content', `${projet[0].name}, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`)
+  document
+    .querySelector('meta[name="keywords"]')
+    .setAttribute(
+      "content",
+      `${projet[0].name}, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`
+    );
 }
 
-SEO()
+SEO();

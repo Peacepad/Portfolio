@@ -26,19 +26,6 @@
 
     <link href="./public/css/style.css" rel="stylesheet" />
 
-    <!-- Icones -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;500&family=Uchen&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- SEO -->
     <meta
       name="keywords"
@@ -63,7 +50,7 @@
   <body>
     <div class="page-container">
       <div class="nav-btn">
-        <span class="material-symbols-outlined"> menu </span>
+        <img src="./public/images/icons/menu.svg" alt="menu" />
       </div>
 
       <nav class="navigation-mobile">
@@ -99,9 +86,7 @@
             </li>
 
             <li class="navigation-item">
-              <a href="#creations" id="navigation-creations__link"
-                >CREATIONS</a
-              >
+              <a href="#creations" id="navigation-creations__link">CREATIONS</a>
             </li>
             <li class="navigation-item" id="navigation-realisation">
               <a href="#realisations" id="navigation-realisation__link"
@@ -173,7 +158,7 @@
 
             <div class="presentation-top-right">
               <img
-                src="./public/images/webdev.png"
+                src="./public/images/webdev.webp"
                 alt="illustration d'un développeur"
                 class="appear-img"
               />
@@ -205,23 +190,24 @@
         <div class="creations-container">
           <h2 id="creations-title" class="title-left">Créations</h2>
 
-          <div class="creations-item creations-meteo appear-img">
-            <div class="creations-img">
-              <img src="/images/meteo.png" alt="météo" />
-            </div>
-            <a href="./divers/meteo.html">
-              <div class="creations-name">Météo</div></a
-            >
-          </div>
+          <a href="./divers/meteo.html">
+            <div class="creations-item creations-meteo appear-img">
+              <div class="creations-img">
+                <img src="/images/meteo.webp" alt="météo" />
+              </div>
 
-          <div class="creations-item creations-game appear-img">
-            <div class="creations-img">
-              <img src="/images/game.png" alt="météo" />
-            </div>
-            <a href="./divers/game.html">
+              <div class="creations-name">Météo</div>
+            </div></a
+          >
+          <a href="./divers/game.html">
+            <div class="creations-item creations-game appear-img">
+              <div class="creations-img">
+                <img src="/images/game.webp" alt="météo" />
+              </div>
+
               <div class="creations-name">Jeu</div>
-            </a>
-          </div>
+            </div></a
+          >
 
           <div
             class="border-container border-container__left"
@@ -278,7 +264,7 @@
 
             <div id="contact-buttons">
               <button id="contact-cancel" class="button contact-button">
-                <span class="button-text">Annuler</span>
+                <span class="button-text">Effacer</span>
               </button>
               <button id="contact-send" class="button contact-button">
                 <span class="button-text">Envoyer</span>
@@ -298,9 +284,9 @@
       </article>
     </div>
 
-    <script src="./javascript/realisation.js"></script>
-    <script src="./javascript/navigation.js"></script>
-    <script src="./javascript/contact.js"></script>
-    <script src="./javascript/scroll.js"></script>
+    <script src="./javascript/realisation.min.js"></script>
+    <script src="./javascript/navigation.min.js"></script>
+    <script src="./javascript/contact.min.js" defer></script>
+    <script src="./javascript/scroll.min.js"></script>
   </body>
 </html>
