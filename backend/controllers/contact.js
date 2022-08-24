@@ -1,4 +1,4 @@
-const connection = require("../service/database");
+
 const nodemailer = require("nodemailer");
 
 exports.post = (req, res, next) => {
@@ -64,7 +64,7 @@ exports.post = (req, res, next) => {
 
       html: `<p>Bonjour ${firstname} !</p>
         <p>Merci d'avoir contacté le site pa-delamare.fr, le message suivant a été envoyé:</p>
-        <p>${message}</p>
+        <p>${textMessage}</p>
         <p>Une réponse vous sera rapidement adressé, cordialement.</p>
         `,
     };

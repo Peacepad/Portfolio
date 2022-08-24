@@ -1,0 +1,42 @@
+@font-face{
+    font-family: "Poppins";
+    src: url("../public/fonts/Poppins/Poppins-Light.ttf") format("ttf");
+    font-weight: 300;
+    font-style: normal;
+    font-display:swap;
+  }
+  
+  @font-face{
+    font-family: "Poppins";
+    src: url("../public/fonts/Poppins/Poppins-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap;
+  }
+  
+  @font-face{
+    font-family: "Poppins";
+    src: url("../public/fonts/Poppins/Poppins-Medium.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+    font-display:swap;
+  }
+  
+  @font-face{
+    font-family: "Poppins";
+    src: url("../public/fonts/Poppins/Poppins-SemiBold.ttf") format("ttf");
+    font-weight: 600;
+    font-style: normal;
+    font-display:swap;
+  }
+  
+  @font-face{
+    font-family: "Uchen";
+    src: url("../public/fonts/Uchen/Uchen-Regular.ttf") format("ttf");
+    font-display:swap;
+  }
+  @font-face{
+    font-family: "PlayFair Display";
+    src: url("../public/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("ttf");
+    font-display:swap;
+  }
