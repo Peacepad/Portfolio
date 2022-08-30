@@ -156,13 +156,30 @@ previousProjet();
 
 //
 async function SEO() {
-  const projet = await getRealisations();
-  document
+  const projet = await fetchProjet();
+
+  
+  
+
+    if(projet[0].name == "Groupomania") {
+      document
+      .querySelector('meta[name="keywords"]')
+      .setAttribute(
+        "content",
+        `${projet[0].name}, React, ReactJS, Mysql, typescript, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`
+      );
+    }
+    else {
+      document
     .querySelector('meta[name="keywords"]')
     .setAttribute(
       "content",
       `${projet[0].name}, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`
     );
+    }
+
 }
+
+
 
 SEO();
