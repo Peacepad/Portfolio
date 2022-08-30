@@ -166,7 +166,7 @@ async function SEO() {
       .querySelector('meta[name="keywords"]')
       .setAttribute(
         "content",
-        `${projet[0].name}, React, ReactJS, Mysql, typescript, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`
+        `${projet[0].name}, React, ReactJS, Mysql, typescript, Openclassrooms, portfolio, github, pierre-antoine delamare, openclassroom`
       );
     }
     else {
