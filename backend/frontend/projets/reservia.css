@@ -1,0 +1,663 @@
+/*--------------------Général-------------------*/
+
+body {
+    margin:0;
+    font-family: "raleway", sans-serif;
+}
+
+.contenu-page { 
+    max-width: 1519px;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+em {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+
+/*----------------------Header------------------*/
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 95%;
+    margin: auto;
+    margin-top: 0px;
+    height: 80px;
+    margin-bottom: 30px;
+    align-items: flex-end;
+}
+
+.main-logo img { /* Logo Reservia */
+    height: 45px;
+}
+
+.nav-big-screen {
+    margin-right: 38px;
+    height: 80px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+.nav-big-screen ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    margin-top: 0px;
+    align-items: center;
+}
+
+.nav-big-screen li {
+    margin-left:60px;
+    height: 100%;
+    text-align: center;
+    padding-top: 35px;
+    padding-left:15px;
+    padding-right:15px;
+    border-top: 2px solid rgba(0,0,0,0);
+    font-size: 1em;
+}
+
+.nav-big-screen li:hover {
+    border-top: #0065FC 2px solid;
+}
+
+.nav-big-screen li:hover a {
+    color:#0065FC;
+}
+
+
+.nav-big-screen__subscribe { /* lien s'inscrire apparait + en gras */
+    font-weight: 700;
+}
+
+.nav-big-screen__subscribe {
+    color:#0065FC;
+}
+
+
+/*--------------------.top-of-page-----------------*/
+
+.top-of-page {
+    width: 95%;
+    margin:auto;
+    font-size: 0.9em;
+    margin-bottom:30px;
+}
+
+.top-of-page__1 p {
+    margin-top: 4px;
+    font-weight: 300;
+}
+
+/*----Champ de recherche---*/
+
+.search-form {
+    display:flex;
+    flex-direction: row;
+    height: 40px;
+}
+
+.search-form__icon { /*Boite à gauche de la barre de recherche*/
+    margin-right:0;
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2;
+    text-align: center;
+    vertical-align: middle;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: relative;
+}
+
+.search-form__icon i {
+    position: absolute;
+    bottom: 13px;
+    left:15px;
+}
+
+.search-form__bar {
+    height: 40px ;
+    width: 220px;
+    border: #f2f2f2 1px solid;
+    margin-right: 0;
+    padding-left:10px;
+    color: black;
+    font-weight: bold;
+    font-family: "raleway", sans-serif;
+    font-size: 1em;
+}
+
+.search-form__button {
+    border: none;
+    background-color: #0065FC;
+    color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-family: "raleway", sans-serif;
+    width: 95px;
+}
+
+.search-form__bar:focus { /*empêche la bordure lorsqu'on écrit dans le champ de recherche */
+    outline: none;
+}
+
+#search-form__button2 {
+    display: none;
+}
+
+
+/*----Les filtres---*/
+
+.top-of-page__3 {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700; 
+    margin-top: 15px; 
+}
+
+.top-of-page__3__title {
+    display:flex;
+    align-items: center;
+    margin-right: 40px;
+    font-size: 1.1em;
+}
+
+.top-of-page__3 ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.filters input {
+    background-color: white;
+    height: 40px;
+    border: #d9d9d9 solid 3px;
+    border-radius: 20px;
+    padding-left: 40px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 25px;
+    -webkit-appearance: none;
+}
+
+.filters input:active { /*quand on clique sur le bouton */
+    border: #0065FC solid 2px;
+    background-color: #DEEBFF;
+}
+
+/*bouton de filtre*/
+.filters__button {
+    position: relative;
+}
+ 
+.filters__ico {
+    background-color: #DEEBFF;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: -10px;
+    border-radius: 100%;
+    display:flex;
+}
+ 
+.filters__ico i {
+    margin: auto;
+    /*filtre pour rendre l'icone de la bonne couleur*/
+    filter: invert(24%) sepia(40%) saturate(6775%) hue-rotate(211deg) brightness(102%) contrast(102%);
+}
+
+/* boutons avec hover*/
+
+.filters__button--1:hover .filters__ico--1 {
+    background-color: #0065FC;
+}   
+
+.filters__button--1:hover .filters__ico--1 i {
+    filter: invert(100%) sepia(40%) saturate(3842%) hue-rotate(177deg) brightness(104%) contrast(102%);
+}
+
+.filters__button--2:hover .filters__ico--2 {
+    background-color: #0065FC;
+}   
+
+.filters__button--2:hover .filters__ico--2 i {
+    filter: invert(100%) sepia(40%) saturate(3842%) hue-rotate(177deg) brightness(104%) contrast(102%);
+}
+
+.filters__button--3:hover .filters__ico--3 {
+    background-color: #0065FC;
+}   
+
+.filters__button--3:hover .filters__ico--3 i {
+    filter: invert(100%) sepia(40%) saturate(3842%) hue-rotate(177deg) brightness(104%) contrast(102%);
+}
+
+.filters__button--4:hover .filters__ico--4 {
+    background-color: #0065FC;
+}   
+
+.filters__button--4:hover .filters__ico--4 i {
+    filter: invert(100%) sepia(40%) saturate(3842%) hue-rotate(177deg) brightness(104%) contrast(102%);
+}
+
+
+/*----------.top-of-page__4-------------*/
+
+#ico-info {
+    display: block;
+    border-radius: 100%;
+    border: solid 1px #c4c2c2;
+    height: 1.3em;
+    width: 1.3em;
+    text-align: center;
+    line-height: 1.3em;
+    float: left;
+    margin-right:10px;
+}
+
+#ico-info i {
+    font-size:1em;
+    filter: invert(24%) sepia(91%) saturate(3771%) hue-rotate(211deg) brightness(102%) contrast(106%);   
+}
+
+.top-of-page__4 {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+/*---------------------Container middle of page----------------*/
+
+
+
+.middle-of-page {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.middle-of-page a {
+    text-decoration: none;
+}
+
+
+/*----------------------------Article--------------------------*/
+
+article {
+    display: flex;
+    width:65%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#article__heading {
+    width: 90%;
+    margin:auto;
+}
+
+/*----------disposition des cards----------*/
+
+.article__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 430px;
+    width: 90%;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #e0dfdf;
+    padding:5px;
+}
+
+.card:hover {
+    box-shadow: 3px 3px 5px #c4c2c2;
+}
+
+.card:active {
+    box-shadow: 3px 3px 5px #0065FC;
+}
+
+.card__content {
+    margin-left: 10px;
+}
+
+/*--diminuer l'espacement entre le titre et le texte--*/
+.card h3 {
+    margin-bottom: 4px;
+    margin-top: 2px;
+    text-overflow: ellipsis;
+}
+
+.card__content p {
+    margin-top: 2px;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    font-weight: 400;
+    
+}
+
+/*redimension des images*/
+.card__image img {
+    width: 16.4vw;
+    height: 114px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+    max-width: 250px;
+}
+
+
+/*Etoiles de notation */
+
+.rating {
+    display:flex;
+    flex-direction: row; 
+    align-content: flex-start;
+    justify-items: center;
+    margin-top: 8px;
+}
+
+.blue_stars, .grey_stars {
+    display:flex;
+    flex-direction: row;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+.blue_stars i {
+    font-size: 0.8em;
+    filter: invert(24%) sepia(91%) saturate(3771%) hue-rotate(211deg) brightness(102%) contrast(106%);
+    margin-right: 5px;
+}
+
+.grey_stars i {
+    margin-right: 5px;
+    font-size: 0.8em;
+    filter: invert(100%) sepia(1%) saturate(2549%) hue-rotate(214deg) brightness(88%) contrast(94%);
+}
+
+article a {
+    color: black;
+    text-decoration: none;
+}
+
+.article-more {
+    margin-top: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+.article-more a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/*-------------------------Aside------------------------*/
+
+#ico_pop {
+    display: block;
+    height: 1.2em;
+    width: 1.2em;
+    text-align: center;
+    line-height: 1.2em;
+    float: right;
+}
+
+.aside__heading {
+    width: 85%;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+aside {
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+.aside__container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    width: 85%;
+    margin:auto;
+    margin-top: 0;
+}
+
+.card2 {
+    padding-top: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 3px 3px 5px #e0dfdf ;
+}
+
+.card2:hover {
+    box-shadow: 3px 3px 5px #c4c2c2;
+}
+
+.card2:active {
+    box-shadow: 3px 3px 5px #0065FC;
+}
+
+.card2__image img {
+    height: 130px;
+    width: 10vw;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    max-width:148px;
+    object-fit: cover;
+}
+
+.card2__image {
+    margin-right: 15px;
+}
+
+.card2__content h3, .card2__content p {
+    color: black
+}
+
+
+
+
+/*--------------------------------Bottom of page -----------------------------*/
+
+.bottom-of-page {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;   
+    margin-top: 40px;
+}
+
+.bottom-of-page a {
+    text-decoration: none;
+}
+
+
+
+.bottom-of-page__container {
+    display:flex;
+    max-height: 493px;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 490px;
+}
+
+.card3 {
+    display:flex;
+    flex-direction: column;   
+    border-radius: 15px;
+    background-color:white;
+    box-shadow: 3px 3px 5px #e0dfdf ;
+}
+
+
+.card3:hover {
+    box-shadow: 3px 3px 5px #c4c2c2;
+}
+
+.card3:active {
+    box-shadow: 3px 3px 5px #0065FC;
+}
+
+.card3__image img {
+    height: 430px;
+    width: 21vw;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-width:350px;
+}
+
+.card3__content h3 {
+    padding-left: 15px;
+}
+
+.card3__content {
+    color: black;
+    width: 21vw;
+    max-width:350px;
+}
+
+
+
+/*taille moyenne*/
+.card3__image--m img {
+    height: 200px;
+    width: 21vw;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-width:350px;
+}
+
+/*petite taile*/
+
+.card3__image--s img {
+    height: 125px;
+    width: 21vw;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-width:350px;
+}
+
+
+/*--------------------------------------Footer--------------------------*/
+
+footer {  /*Permet de garder la bande grise du footer sur grands écrans */
+    background-color: #f2f2f2;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer100 {
+    width: 100%;
+    max-width: 1519px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.footer__container {
+    width:95%;
+    margin: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;  
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.footer__list
+{
+    margin-right: 300px;
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+
+/*----------------------A ne pas afficher ------------------------*/
+.header__subscribe, .nav-mobile {
+    display: none;
+}
