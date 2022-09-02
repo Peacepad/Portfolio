@@ -71,6 +71,18 @@ async function showFetchProjet() {
   projetDescription.innerText = `${projet[0].description2}`;
   projetDescriptionContainer.appendChild(projetDescription);
 
+  //lien de DL
+
+  if(projet[0].more) {
+    let projetMoreHeader = document.createElement('h2');
+    projetMoreHeader.innerText = "En Plus";
+    projetDescriptionContainer.appendChild(projetMoreHeader);
+
+    let projetMore = document.createElement('p');
+    projetMore.innerHTML = `${projet[0].more}`;
+    projetDescriptionContainer.appendChild(projetMore);
+  }
+
   // Projet Link
   let projetLinkContainer = document.createElement("div");
   projetLinkContainer.setAttribute("class", "projet-link__container");
