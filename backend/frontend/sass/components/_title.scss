@@ -1,0 +1,40 @@
+.title-right {
+    position: absolute;
+    left: 75%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    font-family: "uchen", sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 1;
+    background: linear-gradient(180deg, white 50%, #F6F2EF 50%);
+    padding: 10px;
+    @media (max-width: 992px) {
+      left: 50%;
+    }
+    @media (max-width: 576px) {
+      font-size: 2em;
+    }
+    
+  }
+
+  .title-left {
+    background: linear-gradient(180deg, white 50%, #F6F2EF 50%);
+    position: absolute;
+    left: 25%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    font-family: "uchen", sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 1;
+    padding: 10px;
+    @media (max-width: 992px) {
+      left: 50%;
+    }
+    @media (max-width: 576px) {
+      font-size: 2em;
+    }
+  }

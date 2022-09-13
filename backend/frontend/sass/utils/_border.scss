@@ -1,0 +1,33 @@
+.border-container {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: solid 1px black;
+  z-index: 0;
+  animation: border-scale 1s ease forwards;
+  &__center {
+    top: 10px;
+    left: 10px;
+    @media (max-width: 992px) {
+      top: 5px;
+      left: 5px;
+    }
+  }
+  &__right {
+    top: -10px;
+    left: 10px;
+    @media (max-width: 992px) {
+        top: -5px;
+        left: 5px;
+      }
+  }
+  &__left {
+    top: -10px;
+    left: -10px;
+    @media (max-width: 992px) {
+        top: -5px;
+        left: -5px;
+      }
+  }
+}
+

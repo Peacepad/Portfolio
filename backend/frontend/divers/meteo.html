@@ -59,108 +59,115 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GE6JF7XE0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GE6JF7XE0Z"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-GE6JF7XE0Z');
-</script>
+      gtag("config", "G-GE6JF7XE0Z");
+    </script>
 
-    <title>Pierre-Antoine - Météo</title>
+    <title>Pierre-Antoine - Application Météo en javascript</title>
   </head>
   <body>
-
     <nav class="navigation-projet">
-      <a href="../../index.html"
-        ><span class="material-symbols-outlined"> arrow_back </span> Accueil</a
+      <a href="../../index.html#creations-title"
+        ><img
+        src="../public/images/icons/arrow_back.svg"
+        alt="aller en arrière"
+      /> Accueil</a
       >
     </nav>
 
-    <div class="meteo">
+    <div class="meteo-container">
+      <div class="meteo">
         <div class="meteo-top">
           <h1>Application <span>météo</span></h1>
           <div class="logo"></div>
           <div class="temperature"></div>
           <div class="location"></div>
         </div>
-      
-  
-      <div class="meteo-bottom">
-        <div class="tabs">
-          <button class="active" id="btn-hours">Heures</button>
-          <button class="" id="btn-previsions">Prévisions</button>
+        <div class="meteo-bottom">
+          <div class="tabs">
+            <button class="active" id="btn-hours">Heures</button>
+            <button class="" id="btn-previsions">Prévisions</button>
+          </div>
+          <div class="forecast-container">
+            <ul class="forecast-hours forecast active">
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+              <li>
+                <p class="hour-name"></p>
+                <p class="hour-temp"></p>
+              </li>
+            </ul>
+            <ul class="forecast-days forecast">
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+              <li>
+                <p class="day-name"></p>
+                <p class="day-temp"></p>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="forecast-container">
-          <ul class="forecast-hours forecast active">
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-            <li>
-              <p class="hour-name"></p>
-              <p class="hour-temp"></p>
-            </li>
-          </ul>
-          <ul class="forecast-days forecast ">
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-            <li>
-              <p class="day-name"></p>
-              <p class="day-temp"></p>
-            </li>
-          </ul>
+        <div class="loader">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
         </div>
+        <div class="error-msg"></div>
       </div>
-      <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
-      <div class="error-msg"></div>
     </div>
     <script src="./javascript/meteo.js"></script>
   </body>
