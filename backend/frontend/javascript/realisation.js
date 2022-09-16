@@ -22,7 +22,7 @@ async function realisationsMain() {
       let realisationDiv = document.createElement("div");
       realisationDiv.setAttribute("class", "realisation");
      
-      realisationDiv.setAttribute("id", `realisation__${realisations[l].id}`);
+      realisationDiv.setAttribute("id", `realisation_${realisations[l].id}`);
       realisationsList.appendChild(realisationDiv);
 
       // Création de l'image

@@ -101,7 +101,6 @@
           <li></li>
           <li></li>
         </ul>
-        
       </nav>
 
       <main class="accueil" id="accueil">
@@ -111,11 +110,15 @@
               <a href="#accueil" id="navigation-accueil__link">Accueil</a>
             </li>
             <li class="navigation-item" id="navigation-presentation">
-              <a href="#presentation-title" id="navigation-about__link">A propos</a>
+              <a href="#presentation-title" id="navigation-about__link"
+                >A propos</a
+              >
             </li>
 
             <li class="navigation-item">
-              <a href="#creations-title" id="navigation-creations__link">CREATIONS</a>
+              <a href="#creations-title" id="navigation-creations__link"
+                >CREATIONS</a
+              >
             </li>
             <li class="navigation-item" id="navigation-realisation">
               <a href="#realisations-title" id="navigation-realisation__link"
@@ -164,9 +167,7 @@
 
           <div class="presentation-top">
             <div class="presentation-top-left">
-              <p class="appear-text">
-                <span class="presentation-big">Bonjour,</span>
-              </p>
+              <p class="appear-text">Bonjour,</p>
               <p class="appear-text">
                 Je suis développeur web. Passionné depuis toujours
                 d’informatique j’ai suivi une formation dans le but de réaliser
@@ -186,11 +187,21 @@
             </div>
 
             <div class="presentation-top-right">
-              <img
-                src="./public/images/webdev.svg"
-                alt="illustration d'un développeur"
-                class="appear-img"
-              />
+              <div class="eyes-container appear-img">
+                <div class="eyes">
+                  <div class="eye">
+                    <div class="ball"></div>
+                  </div>
+
+                  <div class="eye">
+                    <div class="ball"></div>
+                  </div>
+                </div>
+                <img
+                  src="./public/images/webdev.svg"
+                  alt="illustration d'un développeur"
+                />
+              </div>
             </div>
           </div>
 
@@ -314,6 +325,7 @@
     </div>
 
     <script src="./javascript/realisation.min.js"></script>
+    <script src="./javascript/presentation.min.js" defer></script>
     <script src="./javascript/navigation.min.js"></script>
     <script src="./javascript/contact.min.js" defer></script>
     <script src="./javascript/scroll.min.js"></script>

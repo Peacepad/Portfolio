@@ -1,7 +1,6 @@
 .realisations {
   position: relative;
   width: 100%;
-
   margin: 100px auto;
   height: 850px;
   @media (max-width: 1200px) {
@@ -12,7 +11,6 @@
 .realisations-container {
   width: 90%;
   height: 100%;
-
   position: relative;
   background-color: #f6f2ef;
   display: flex;
@@ -30,7 +28,6 @@
   flex-direction: row;
   margin: auto;
   justify-content: center;
-
   width: 100%;
   position: relative;
   z-index: 1;
@@ -61,6 +58,7 @@
   margin: 20px 20px;
   border: solid 1px black;
   position: relative;
+  transition: 300ms;
   @media (max-width: 1700px) {
     max-width: 300px;
     max-height: 300px;
@@ -99,7 +97,6 @@
   z-index: 1;
   background-color: transparent;
   width: 90%;
-
   height: 40px;
   overflow: hidden;
   box-shadow: 0 0 0 0 black;
@@ -136,3 +133,4 @@
   margin-top: 10px;
   text-align: center;
 }
+
