@@ -33,13 +33,17 @@
   
 }
 
+.creations a {
+  z-index: 1;
+}
+
 .creations-item {
   border: solid 1px black;
   height: 300px;
   width: 350px;
   position: relative;
   cursor: pointer;
-  z-index: 1;
+ 
   &:hover .creations-img {
     transform: translate(-50%, -75%);
   }

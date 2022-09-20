@@ -5,6 +5,8 @@ const cors = require("cors");
 const fs = require("fs");
 const projetRoutes = require("./routes/projet");
 const contactRoutes = require("./routes/contact");
+const userRoutes = require('./routes/user');
+const noteRoutes = requires('./routes/note');
 
 const app = express();
 
@@ -25,5 +27,7 @@ app.use('/divers', express.static("./frontend/divers"))
 
 app.use("/api/projet", projetRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/note", noteRoutes);
 
 module.exports = app;

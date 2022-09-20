@@ -9,16 +9,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.0",
     "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
+    "mysql-apostrophe": "^1.0.8",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.7",
     "npm": "^8.9.0",
     "pm2": "^5.2.0"
-    
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

@@ -1,4 +1,3 @@
-
 const nodemailer = require("nodemailer");
 
 exports.post = (req, res, next) => {

@@ -78,6 +78,7 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+  position: relative;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -88,6 +89,12 @@
   width: 387.61px;
   min-height: 435.86px;
   min-width: 387.61px;
+  @media (max-width:400px) {
+    min-height: none;
+    height: auto;
+    min-width: 100%;
+    width: 100%;
+  }
 }
 
 .presentation-bottom {
@@ -107,7 +114,15 @@
   min-height: 435.86px;
   min-width: 387.61px;
   position: relative;
+  @media (max-width:400px) {
+    min-height: none;
+    height: auto;
+   
+    min-width: 100%;
+    width: 100%;
+  }
 }
+
 .eyes {
   position: absolute;
   top: 191px;
@@ -116,6 +131,9 @@
   width: 100%;
   text-align: center;
   z-index: 1;
+  @media (max-width:400px) {
+    display:none
+  }
 }
 
 .eye {

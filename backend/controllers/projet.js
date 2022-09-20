@@ -2,17 +2,15 @@ const connection = require("../service/database");
 
 exports.get = (req, res, next) => {
   try {
-    connection
-      .query("SELECT * FROM Projet")
-      .then((results) => {
-        
-        return res.status(201).json(results);
-      })
-      .catch(() => {
-        return res.status(401);
-      });
+    let sql= "SELECT * FROM Projet";
+    connection.query(sql,(err, results) => {
+      if(err) throw err;
+      return res.status(201).json(results)
+    })
+    
   } catch {
-    return res.status(401);
+    console.log(err);
+    return res.status(401).json(err);
   }
 };
 
