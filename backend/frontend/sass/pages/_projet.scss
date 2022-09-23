@@ -1,3 +1,40 @@
+.projet-page-right {
+  opacity: 0;
+  animation: projet-page-right 400ms 200ms forwards;
+}
+.projet-page-left {
+  opacity: 0;
+  animation: projet-page-left 400ms 200ms forwards;
+}
+
+.projet-page {
+  transition: 400ms;
+  position: relative;
+}
+
+@keyframes projet-page-left {
+  from {
+    opacity: 0;
+    transform: translateX(100%)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes projet-page-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100%)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 #projet {
   display: flex;
   flex-direction: column;
@@ -132,7 +169,7 @@
   border-radius: 50%;
 }
 
-@for $i from 1 through 30 {
+@for $i from 1 through 40 {
   @keyframes particle-animation-#{$i} {
     100% {
       transform: translate3d(
@@ -145,7 +182,7 @@
 
   .particle:nth-child(#{$i}) {
     animation: particle-animation-#{$i} 60s infinite;
-    $size: random(5) + 5 + px;
+    $size: random(5) + 10 + px;
     opacity: calc(random(100) / 100);
     height: $size;
     width: $size;

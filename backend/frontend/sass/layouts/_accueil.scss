@@ -12,16 +12,12 @@
 }
 
 .accueil-container {
-  position: relative;
-  background: #f6f2ef;
   height: calc(100% - 70px);
   min-height: 470px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 90%;
   @media (max-width: 768px) {
     height: 100%;
   }
@@ -30,19 +26,14 @@
 .accueil h1 {
   font-size: 4.5em;
   white-space: nowrap;
-  color: black;
   text-align: center;
   letter-spacing: 10px;
   line-height: 1em;
   font-family: "playfair Display", serif;
-  overflow: hidden;
-
   @media (max-width: 1200px) {
     letter-spacing: 0px;
-
     font-size: 5em;
   }
-
   @media (max-width: 576px) {
     font-size: 2.3em;
   }

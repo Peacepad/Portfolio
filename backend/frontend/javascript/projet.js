@@ -1,5 +1,17 @@
 let params = new URL(document.location).searchParams;
 let projetid = parseInt(params.get("id"));
+let direction = params.get("direction");
+const projetPage = document.querySelector(".projet-page");
+
+function pageTransition() {
+
+  if (direction === "left") {
+    console.log("left");
+    projetPage.classList.remove("projet-page-left");
+    projetPage.classList.add("projet-page-right");
+  }
+}
+pageTransition();
 
 const projetContainer = document.querySelector(".projet-container");
 const projetHeader = document.querySelector(".projet-header");
@@ -73,12 +85,12 @@ async function showFetchProjet() {
 
   //lien de DL
 
-  if(projet[0].more) {
-    let projetMoreHeader = document.createElement('h2');
+  if (projet[0].more) {
+    let projetMoreHeader = document.createElement("h2");
     projetMoreHeader.innerText = "En Plus";
     projetDescriptionContainer.appendChild(projetMoreHeader);
 
-    let projetMore = document.createElement('p');
+    let projetMore = document.createElement("p");
     projetMore.innerHTML = `${projet[0].more}`;
     projetDescriptionContainer.appendChild(projetMore);
   }
@@ -138,8 +150,9 @@ async function nextProjet() {
   } else {
     nextProjetNumber = projetid + 1;
   }
-  nextProjetDiv.innerHTML = `<a href="./projet.html?id=${nextProjetNumber}" alt="Projet suivant"><img src="../public/images/icons/arrow_forward.svg" alt="aller en avant" /></a>`;
+  nextProjetDiv.innerHTML = `<a href="./projet.html?id=${nextProjetNumber}&direction=left" alt="Projet suivant"><img src="../public/images/icons/arrow_forward.svg" alt="aller en avant" /></a>`;
   projetContainer.appendChild(nextProjetDiv);
+  
 }
 nextProjet();
 
@@ -170,28 +183,21 @@ previousProjet();
 async function SEO() {
   const projet = await fetchProjet();
 
-  
-  
-
-    if(projet[0].name == "Groupomania") {
-      document
+  if (projet[0].name == "Groupomania") {
+    document
       .querySelector('meta[name="keywords"]')
       .setAttribute(
         "content",
         `${projet[0].name}, React, ReactJS, Mysql, typescript, Openclassrooms, portfolio, github, pierre-antoine delamare, openclassroom`
       );
-    }
-    else {
-      document
-    .querySelector('meta[name="keywords"]')
-    .setAttribute(
-      "content",
-      `${projet[0].name}, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`
-    );
-    }
-
+  } else {
+    document
+      .querySelector('meta[name="keywords"]')
+      .setAttribute(
+        "content",
+        `${projet[0].name}, Openclassrooms, portfolio, pierre-antoine delamare, openclassroom`
+      );
+  }
 }
-
-
 
 SEO();

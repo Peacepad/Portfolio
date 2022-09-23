@@ -1,6 +1,6 @@
-
-
+@import "./pages/home";
 @import "./utils/variables";
+@import "./components/container";
 @import "./components/navigation";
 @import "./layouts/accueil";
 @import "./utils/button";
@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 .page-container {
